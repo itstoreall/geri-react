@@ -6,11 +6,17 @@ const Navigation = () => (
     <a className="link active-link" href="/">
       Home
     </a>
-    <a className="link active-link" href="/user-page">
+    <a className="link active-link" href="/users-page">
       Users
     </a>
     <a className="link active-link" href="/home-works">
       Home Works
+    </a>
+    <a className="link active-link" href="/books">
+      Books
+    </a>
+    <a className="link active-link" href="/tests">
+      Tests
     </a>
     <a className="link active-link" href="/about">
       About

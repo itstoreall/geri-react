@@ -1,8 +1,10 @@
 import React from 'react';
-import HomePage from './pages/HomePage';
-import UserPage from './pages/UserPage';
-import HomeWorksPage from './pages/HomeWorksPage';
-import AboutPage from './pages/AboutPage';
+import HomePage from '../pages/HomePage';
+import UsersPage from '../pages/UserPage';
+import HomeWorksPage from '../pages/HomeWorksPage';
+import BooksPage from '../pages/BooksPage';
+import TestPage from '../pages/TestPage';
+import AboutPage from '../pages/AboutPage';
 
 const Content = () => {
   const { pathname } = window.location;
@@ -10,8 +12,10 @@ const Content = () => {
   return (
     <div className="content">
       {pathname === '/' && <HomePage />}
-      {pathname === '/user-page' && <UserPage />}
+      {pathname === '/users-page' && <UsersPage />}
       {pathname === '/home-works' && <HomeWorksPage />}
+      {pathname === '/books' && <BooksPage />}
+      {pathname === '/tests' && <TestPage />}
       {pathname === '/about' && <AboutPage />}
       
       <p>
