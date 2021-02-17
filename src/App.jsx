@@ -1,6 +1,7 @@
 import React from 'react';
 // import BookList from './components/BookList';
 import Navigation from './components/Navigation/Navigation';
+import Content from './components/Content';
 import './app.css';
 
 // const books = [
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="app">
       <Navigation />
+      <Content />
       {/* <BookList books={books} /> */}
     </div>
   );
