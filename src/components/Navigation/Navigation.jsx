@@ -1,27 +1,18 @@
 import React from 'react';
-import './navigation.css';
+import NavLink from './NavLink';
+import { routes } from '../routes';
+import useStyles from './NavStyle';
 
-const Navigation = () => (
-  <div className="navigation">
-    <a className="link active-link" href="/">
-      Home
-    </a>
-    <a className="link active-link" href="/users-page">
-      Users
-    </a>
-    <a className="link active-link" href="/home-works">
-      Home Works
-    </a>
-    <a className="link active-link" href="/books">
-      Books
-    </a>
-    <a className="link active-link" href="/tests">
-      Tests
-    </a>
-    <a className="link active-link" href="/about">
-      About
-    </a>
-  </div>
-);
+const Navigation = () => {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.navigation}>
+      {routes.map(({ path, label }) =>
+        <NavLink key={path} path={path} label={label} />
+      )}
+    </div>
+  );
+};
 
 export default Navigation;

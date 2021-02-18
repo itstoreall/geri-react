@@ -5,7 +5,7 @@ import Form from '../components/Form/Form';
 import TestComponent from '../components/TestComponent';
 
 const TestPage = () => {
-  const x = 3;
+  // const x = 3;
   const sayHello = () => console.log('Hello');
 
   return (
