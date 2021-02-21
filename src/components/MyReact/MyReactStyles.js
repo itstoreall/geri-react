@@ -7,6 +7,7 @@ export default createUseStyles({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 10,
+    margin: 30,
     fontSize: 16,
     textTransform: 'uppercase',
     cursor: 'pointer',

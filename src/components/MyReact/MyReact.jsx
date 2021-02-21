@@ -9,8 +9,16 @@ const MyReact = () => {
   return (
     <Fragment>
       <MyReactButton />
-      <MyReactCounter />
-      <a className={s.source} href='https://github.com/itstoreall/geri-react' target='_blanck'>source</a>
+      <MyReactCounter
+        step={5}
+        initialValue={10}
+        s={s} />
+      <a
+        className={s.source}
+        href='https://github.com/itstoreall/geri-react'
+        target='_blanck'>
+        source
+      </a>
     </Fragment>
   );
 }
