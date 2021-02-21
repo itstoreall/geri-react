@@ -16,4 +16,13 @@ export default createUseStyles({
     borderRadius: 4,
     outline: 'none',
   },
+
+  source: {
+    textDecoration: 'none',
+    color: '#ccc',
+
+    '&:hover': {
+      color: 'teal',
+    }
+  }
 });

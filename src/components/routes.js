@@ -9,42 +9,50 @@ import MyReactPage from '../pages/MyReactPage';
 
 export const routes = [
   {
-    path: '/',
+    path: '/geri-react/',
+    // path: '/',
     label: 'Hame',
     component: HomePage
   },
   {
-    path: '/users-page',
+    path: '/geri-react/users-page',
+    // path: '/users-page',
     label: 'Users',
     component: UsersPage
   },
   {
-    path: '/home-works',
+    path: '/geri-react/home-works',
+    // path: '/home-works',
     label: 'Home Works',
     component: HomeWorksPage
   },
   {
-    path: '/books',
+    path: '/geri-react/books',
+    // path: '/books',
     label: 'Books',
     component: BooksPage
   },
   {
-    path: '/tests',
+    path: '/geri-react/tests',
+    // path: '/tests',
     label: 'Tests',
     component: TestPage
   },
   {
-    path: '/about',
+    path: '/geri-react/about',
+    // path: '/about',
     label: 'About',
     component: AboutPage
   },
   {
-    path: '/random-colors',
+    path: '/geri-react/random-colors',
+    // path: '/random-colors',
     label: 'Random Colors',
     component: RandomColorsPage
   },
   {
-    path: '/my-react',
+    path: '/geri-react/my-react',
+    // path: '/my-react',
     label: 'My React',
     component: MyReactPage
   },
