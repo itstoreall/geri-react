@@ -10,6 +10,7 @@ const TestPage = () => {
 
   return (
     <Fragment>
+      <h1>Test Component</h1>
       {/* <Header someMumber={x} age={19} /> */}
 
       {/* <NewComponent>

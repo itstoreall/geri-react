@@ -5,6 +5,7 @@ import BooksPage from '../pages/BooksPage';
 import TestPage from '../pages/TestPage';
 import AboutPage from '../pages/AboutPage';
 import RandomColorsPage from '../pages/RandomColorsPage';
+import MyReactPage from '../pages/MyReactPage';
 
 export const routes = [
   {
@@ -41,5 +42,10 @@ export const routes = [
     path: '/random-colors',
     label: 'Random Colors',
     component: RandomColorsPage
+  },
+  {
+    path: '/my-react',
+    label: 'My React',
+    component: MyReactPage
   },
 ];

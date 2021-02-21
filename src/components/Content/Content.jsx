@@ -1,11 +1,13 @@
 import React from 'react';
-import { routes } from './routes';
+import { routes } from '../routes';
+import useStyles from './ContentStyles';
 
 const Content = () => {
   const { pathname } = window.location;
+  const s = useStyles();
 
   return (
-    <div className="content">
+    <div className={s.content}>
       {routes.map(({ path, component: Component }) =>
         pathname === path && <Component key={path} />
       )}

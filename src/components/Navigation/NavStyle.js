@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
+  
   navigation: {
     display: 'flex',
     flexDirection: 'column',

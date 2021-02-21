@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import BookList from '../components/BookList';
 
 const books = [
@@ -9,6 +9,11 @@ const books = [
   { id: 'id-5', name: 'Harry Potter' },
 ];
 
-const BooksPage = () => <BookList books={books} />;
+const BooksPage = () => (
+  <Fragment>
+    <h1>Book List Page</h1>
+    <BookList books={books} />
+  </Fragment>
+);
 
 export default BooksPage;
