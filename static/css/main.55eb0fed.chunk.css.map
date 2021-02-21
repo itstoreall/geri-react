@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.scss"],"names":[],"mappings":"AAAA,KACE,eAAgB,CAChB,qIAC8E","file":"main.55eb0fed.chunk.css","sourcesContent":["body {\n  overflow: hidden;\n  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,\n    helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;\n}\n"]}
