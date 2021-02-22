@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
 
 class FormInput extends Component {
 
@@ -12,9 +12,19 @@ class FormInput extends Component {
 
   render() {
     const { value } = this.state;
-    const { input } = this.props.s;
+    const { input, values } = this.props.s;
 
-    return <input className={input} type="text" value={value} onChange={this.handleChange} />
+    return (
+      <Fragment>
+        <input
+          className={input}
+          type="text"
+          value={value}
+          onChange={this.handleChange}
+        />
+        <span className={values}>{value}</span>
+      </Fragment>
+    );
   };
 };
 

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
-class FormSignUp extends Component {
-
-  state = {
+const INITIAL_STATE = {
     login: '',
+    email: '',
+    password: '',
   };
+
+class FormSignUp extends Component {
+  state = { ...INITIAL_STATE };
 
   handleChange = e => {
     this.setState({
@@ -13,32 +16,66 @@ class FormSignUp extends Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault();
-    console.log(`Signed up as: ${this.state.login}`);
+    e.preventDefaul();
 
-    this.props.onSubmit(this.state.login);
+    const { login, email, password } = this.state;
+
+    console.log(`Login: ${login} Email: ${email} Password: ${password}`);
+
+    this.props.onSubmit({ ...this.state });
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ ...INITIAL_STATE });
   };
 
   render() {
-    const { login } = this.state;
-    const { input } = this.props.s
-    const { button } = this.props.s;
+    const { login, email, password } = this.state;
+    const { form, formLabel, formInput, formButton } = this.props.s
     const { handleChange } = this;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <form
+        className={form}
+        onSubmit={handleChange}
+      >
+        <label className={formLabel}>
           Name
           <input
-            className={input}
+            className={formInput}
             type="text"
             placeholder="Enter login"
+            name="login"
             value={login}
-            onChange={handleChange} />
+            onChange={handleChange}
+          />
+        </label>
+        <label className={formLabel}>
+          Email
+          <input
+            className={formInput}
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </label>
+        <label className={formLabel}>
+          Password
+          <input
+            className={formInput}
+            type="password"
+            placeholder="Enter password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+          />
         </label>
 
         <button
-          className={button}
+          className={formButton}
           type="submit">
           Sign up as {login}
         </button>
