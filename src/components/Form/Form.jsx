@@ -1,14 +1,16 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
+import FormItems from './FormItems'
+import useStyles from './FormStyles';
 
-const Form = ({ sayHello, someComponent: SomeComponent }) => (
-  <Fragment>
-    <label>
-      <input htmlFor="trololo" />
-    </label>
-    <button onClick={sayHello}>Push me</button>
+const Form = () => {
+  const s = useStyles();
 
-    <SomeComponent />
-  </Fragment>
-);
+  return (
+    <Fragment>
+      <FormItems
+        s={s} />
+    </Fragment>
+  );
+};
 
 export default Form;

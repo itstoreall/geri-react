@@ -6,46 +6,52 @@ import TestPage from '../pages/TestPage';
 import AboutPage from '../pages/AboutPage';
 import RandomColorsPage from '../pages/RandomColorsPage';
 import EventPage from '../pages/EventPage';
+import FormPage from '../pages/FormPage';
 
 export const routes = [
   {
     path: '/',
     label: 'Hame',
-    component: HomePage
+    component: HomePage,
   },
   {
     path: '/users-page',
     label: 'Users',
-    component: UsersPage
+    component: UsersPage,
   },
   {
     path: '/home-works',
     label: 'Home Works',
-    component: HomeWorksPage
+    component: HomeWorksPage,
   },
   {
     path: '/books',
     label: 'Books',
-    component: BooksPage
+    component: BooksPage,
   },
   {
     path: '/tests',
     label: 'Tests',
-    component: TestPage
+    component: TestPage,
   },
   {
     path: '/about',
     label: 'About',
-    component: AboutPage
+    component: AboutPage,
   },
   {
     path: '/random-colors',
     label: 'Random Colors',
-    component: RandomColorsPage
+    component: RandomColorsPage,
   },
   {
-    path: '/event',
+    path: '/events',
     label: 'Events',
-    component: EventPage
+    component: EventPage,
+  },
+  {
+    path: '/forms',
+    label: 'Form',
+    component: FormPage,
   },
 ];

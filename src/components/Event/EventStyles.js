@@ -25,6 +25,6 @@ export default createUseStyles({
 
     '&:hover': {
       color: 'teal',
-    }
-  }
+    },
+  },
 });
