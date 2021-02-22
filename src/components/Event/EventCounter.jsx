@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MyReactCounter extends Component {
+class EventCounter extends Component {
   static defaultProps = {
     step: 1,
     initialValue: 0,
@@ -50,13 +50,13 @@ class MyReactCounter extends Component {
   }
 }
 
-export default MyReactCounter;
+export default EventCounter;
 
 // ======== Второй вариант Counter
 
 // import React, { Component } from 'react';
 
-// class MyReactCounter extends Component {
+// class EventCounter extends Component {
 //   static defaultProps = {
 //     step: 1,
 //     initialValue: 0,
@@ -131,4 +131,4 @@ export default MyReactCounter;
 //   }
 // }
 
-// export default MyReactCounter;
+// export default EventCounter;

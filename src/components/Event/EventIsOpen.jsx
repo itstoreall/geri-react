@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-class MyReactIsOpen extends Component {
+class EventIsOpen extends Component {
   state = {
     isOpen: false,
   };
@@ -22,4 +22,4 @@ class MyReactIsOpen extends Component {
   }
 }
 
-export default MyReactIsOpen;
+export default EventIsOpen;

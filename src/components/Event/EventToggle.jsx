@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-class MyReactToggle extends Component {
+class EventToggle extends Component {
   state = {
     visible: false,
   };
@@ -24,13 +24,13 @@ class MyReactToggle extends Component {
   }
 }
 
-export default MyReactToggle;
+export default EventToggle;
 
 // ========== Второй вариант Toggle
 
 // import React, { Component, Fragment } from 'react';
 
-// class MyReactToggle extends Component {
+// class EventToggle extends Component {
 //   state = {
 //     visible: false,
 //   };
@@ -57,4 +57,4 @@ export default MyReactToggle;
 //   }
 // }
 
-// export default MyReactToggle;
+// export default EventToggle;

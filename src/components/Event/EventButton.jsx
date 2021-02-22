@@ -1,7 +1,7 @@
 import React from 'react';
-import useStyles from './MyReactStyles';
+import useStyles from './EventStyles';
 
-const MyReactButton = () => {
+const EventButton = () => {
   const s = useStyles();
 
   return (
@@ -9,4 +9,4 @@ const MyReactButton = () => {
   );
 };
 
-export default MyReactButton;
+export default EventButton;
