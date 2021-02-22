@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import FormItems from './FormItems'
+import FormSignUp from './FormSignUp';
+import FormInput from './FormInput';
 import useStyles from './FormStyles';
 
 const Form = () => {
@@ -7,8 +8,12 @@ const Form = () => {
 
   return (
     <Fragment>
-      <FormItems
+      <FormSignUp
         s={s} />
+      <hr />
+      <FormInput
+        s={s} />
+      <hr />
     </Fragment>
   );
 };

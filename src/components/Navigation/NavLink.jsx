@@ -9,8 +9,8 @@ const useStyles = createUseStyles({
     color: isActive ? '#f1f1f1' : 'teal',
   
     '&:hover': {
-      color: isActive ? '#f1f1f1' : 'teal',
-      backgroundColor: isActive ? 'teal' : '#f1f1f1',
+      color: '#fff',
+      backgroundColor: isActive ? 'teal' : 'tomato',
     },
   }),
 });

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-// import useStyles from './FormStyles';
-
-class FormItems extends Component {
+class FormInput extends Component {
 
   state = {
     value: '',
@@ -15,10 +13,9 @@ class FormItems extends Component {
   render() {
     const { value } = this.state;
     const { input } = this.props.s;
-    console.log(value);
 
     return <input className={input} type="text" value={value} onChange={this.handleChange} />
   };
 };
 
-export default FormItems;
+export default FormInput;

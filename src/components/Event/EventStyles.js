@@ -17,6 +17,10 @@ export default createUseStyles({
     border: 'none',
     borderRadius: 4,
     outline: 'none',
+
+    '&:hover': {
+      backgroundColor: 'tomato',
+    }
   },
 
   source: {
