@@ -9,7 +9,13 @@ export default createUseStyles({
   // ================== Form 
   form: {
     padding: 20,
-    backgroundColor: 'skyblue',
+    margin: {
+      top: 30,
+      bottom: 30,
+    },
+    border: [[1, 'solid', '#ccc']],
+    backgroundColor: '#ffffff',
+    borderRadius: 7,
   },
 
   formLabel: {
@@ -17,11 +23,15 @@ export default createUseStyles({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    
-    color: 'white',
+    fontWeight: 600,
+    color: 'teal',
 
-    '&:last-child)': {
-      marginBottom: 30,
+    '&:not(:nth-child(3))': {
+      marginBottom: 10,
+    },
+
+    '&:nth-child(3)': {
+      marginBottom: 20,
     },
   },
 
@@ -38,12 +48,15 @@ export default createUseStyles({
     width: 260,
     height: 40,
     fontSize: 16,
-    border: [[2, 'solid', '#ccc']],
+    border: [[1, 'solid', '#ccc']],
     borderRadius: 4,
     outline: 'none',
      
     '&:focus': {
-      border: [[2, 'solid', 'skyblue']]
+      border: [[3, 'solid', 'skyblue']],
+      padding: {
+        left: 8,
+      },
     },
   },
 
@@ -66,6 +79,17 @@ export default createUseStyles({
 
     '&:hover': {
       backgroundColor: 'tomato',
+    },
+  },
+
+  formButtonDisabled: {
+    backgroundColor: '#f1f1f1',
+    color: 'white',
+    cursor: 'auto',
+      
+    '&:hover': {
+      backgroundColor: '#f1f1f1',
+      color: 'white',
     }
   },
 
