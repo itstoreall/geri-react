@@ -33,7 +33,7 @@ class EventCounter extends Component {
 
     return (
       <div>
-        <span>{value}{console.log(value)}</span>
+        <span>{value}</span>
         <button
           className={button}
           type="button"
