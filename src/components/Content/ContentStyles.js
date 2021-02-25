@@ -1,8 +1,12 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from "react-jss";
 
 export default createUseStyles({
-
   content: {
-    paddingLeft: 30,
-  }
+    padding: {
+      left: 30,
+      right: 30,
+    },
+    flex: 1,
+    overflow: "auto",
+  },
 });

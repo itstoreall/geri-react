@@ -16,10 +16,11 @@ const useStyles = createUseStyles({
   },
 });
 
-const TodoInput = () => {
+const TodoInput = ({ onSubmit }) => {
   const { formWrap, form, input, buttonsWrap } = useStyles();
   const [showForm, setShowForm] = useState(false);
   const [value, setValue] = useState("");
+  const [urgency, setUrgency] = useState("low");
 
   // Скрывает или показывает форму
   const toggleForm = () => setShowForm((prevValue) => !prevValue);
@@ -27,8 +28,31 @@ const TodoInput = () => {
   // Записываем значение инпута в стейт
   const handleInputChange = (e) => setValue(e.target.value);
 
+  // Radio buttons
+  const handleUrgencyChange = (e) => setUrgency(e.target.value);
+
+  // Собираем все данные в объект
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Проверка на наличие текста в инпуте
+    if (!value) return;
+
+    const newTodo = {
+      id: Date.now(),
+      date: Date.now(),
+      isDone: false,
+      value,
+      urgency,
+    };
+
+    // Отправляем тудушку через функцию из пропс
+    onSubmit(newTodo);
+
+    // Reset
+    setValue("");
+    setUrgency("low");
+    setShowForm(false);
   };
 
   return (
@@ -45,17 +69,32 @@ const TodoInput = () => {
             <span>urgency:</span>
 
             <label>
-              <input type="radio" />
+              <input
+                type="radio"
+                value="low"
+                checked={urgency === "low"}
+                onChange={handleUrgencyChange}
+              />
               <span>low</span>
             </label>
 
             <label>
-              <input type="radio" />
+              <input
+                type="radio"
+                value="medium"
+                checked={urgency === "medium"}
+                onChange={handleUrgencyChange}
+              />
               <span>medium</span>
             </label>
 
             <label>
-              <input type="radio" />
+              <input
+                type="radio"
+                value="high"
+                checked={urgency === "high"}
+                onChange={handleUrgencyChange}
+              />
               <span>high</span>
             </label>
           </div>
