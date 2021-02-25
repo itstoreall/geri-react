@@ -52,7 +52,7 @@ const Event = () => {
       {
         counters.map(({id}) => <EventMultyCounter
           key={id}
-          initialValue={5}
+          initialValue={1}
           s={s}
           onDelete={() => handleDeleteCounter(id)}
         />)
