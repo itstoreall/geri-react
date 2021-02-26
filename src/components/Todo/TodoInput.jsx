@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
+import { Button, TextField } from "@material-ui/core";
 
 const useStyles = createUseStyles({
   formWrap: {
@@ -59,9 +60,9 @@ const TodoInput = ({ onSubmit }) => {
     <div className={formWrap}>
       {showForm ? (
         <form className={form} onSubmit={handleSubmit}>
-          <input
+          <TextField
             className={input}
-            type="text"
+            label="Enter todo"
             value={value}
             onChange={handleInputChange}
           />
@@ -99,12 +100,18 @@ const TodoInput = ({ onSubmit }) => {
             </label>
           </div>
           <div className={buttonsWrap}>
-            <button onClick={toggleForm}>Cancel</button>
-            <button type="submit">Add todo</button>
+            <Button color="primary" onClick={toggleForm}>
+              Cancel
+            </Button>
+            <Button variant="contained" color="primary" type="submit">
+              Add todo
+            </Button>
           </div>
         </form>
       ) : (
-        <button onClick={toggleForm}>+ Add todo</button>
+        <Button variant="contained" color="primary" onClick={toggleForm}>
+          + Add todo
+        </Button>
       )}
     </div>
   );

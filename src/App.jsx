@@ -1,13 +1,13 @@
-import React from 'react';
-import Navigation from './components/Navigation/Navigation';
-import Content from './components/Content';
-import useStyles from './AppStyles';
+import React from "react";
+import Navigation from "./components/Navigation/Navigation";
+import Content from "./components/Content";
+import useStyles from "./AppStyles";
 
 function App() {
-  const s = useStyles();
+  const { app } = useStyles();
 
   return (
-    <div className={s.app}>
+    <div className={app}>
       <Navigation />
       <Content />
     </div>
