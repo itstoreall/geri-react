@@ -1,7 +1,6 @@
 import { Component } from "react";
-import useStyle from "./ModalClassStyles";
 
-export default class ModalClass extends Component {
+class ModalClass extends Component {
   componentDidMount() {
     console.log("Modal componentDidMount");
   }
@@ -11,10 +10,13 @@ export default class ModalClass extends Component {
   }
 
   render() {
+    const { modalClass__backdrop, modalClass__content } = this.props.s;
     return (
-      <div className="modalClass__backdrop">
-        <div className="modalClass__content">{this.props.children}</div>
+      <div className={modalClass__backdrop}>
+        <div className={modalClass__content}>{this.props.children}</div>
       </div>
     );
   }
 }
+
+export default ModalClass;
