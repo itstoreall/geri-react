@@ -3,18 +3,16 @@
 ## Todos
 
 **lib moment** (_for date formating_)<br />
-
 https://momentjs.com/docs/
 
 **Material UI**<br/>
-
 https://material-ui.com/getting-started/installation/
 
 ```
 npm install @material-ui/core
 ```
 
-**_в index.html > head_** -
+**_В index.html > head:_**
 
 _font_<br/>
 
