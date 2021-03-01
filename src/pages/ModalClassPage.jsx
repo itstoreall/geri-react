@@ -1,5 +1,6 @@
 import { Component, Fragment } from "react";
 import ModalClass from "../components/ModalClass";
+import ModalSection from "../components/ModalClass/ModalSection";
 import withModalClassStyles from "../components/ModalClass/withModalClassStyles";
 
 class ModalClassPage extends Component {
@@ -7,6 +8,7 @@ class ModalClassPage extends Component {
     showModalClass: false,
   };
 
+  // Opens and closes the Modal
   toggleModal = () => {
     this.setState(({ showModalClass }) => ({
       showModalClass: !showModalClass,
@@ -28,16 +30,11 @@ class ModalClassPage extends Component {
           Open Modal
         </button>
         {showModalClass && (
-          <ModalClass s={this.props.s}>
-            <h2>Hi from Modal children</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button
-              className={modalClassBtn}
-              type="button"
-              onClick={this.toggleModal}
-            >
-              Close Modal
-            </button>
+          <ModalClass s={this.props.s} onCloseModalClass={this.toggleModal}>
+            <ModalSection
+              s={this.props.s}
+              onCloseModalClass={this.toggleModal}
+            />
           </ModalClass>
         )}
       </Fragment>
