@@ -45,3 +45,7 @@ import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
 https://material-ui.com/components/material-icons/
 
 > End Todos
+
+```
+cd documents/github/geri-react
+```
