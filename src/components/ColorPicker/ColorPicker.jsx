@@ -1,25 +1,16 @@
 import React from "react";
-
-// Inline Style
-const styles = {
-  option: {
-    display: "inline-block",
-    margin: 4,
-    width: 80,
-    height: 80,
-  },
-};
+import useStyles from "./ColorPickerStyle";
 
 const ColorPicker = ({ options }) => {
-  console.log(options);
+  const { option } = useStyles();
 
   return (
     <div>
       {options.map(({ label, color }) => (
         <span
           key={label}
+          className={option}
           style={{
-            ...styles.option,
             backgroundColor: color,
           }}
         >

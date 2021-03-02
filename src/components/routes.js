@@ -10,6 +10,7 @@ import FormPage from "../pages/FormPage";
 import TodoPage from "../pages/TodoPage";
 import ModalClassPage from "../pages/ModalClassPage";
 import ColorPickerPege from "../pages/ColorPickerPage";
+import ChildrenPage from "../pages/ChildrenPage";
 
 export const routes = [
   {
@@ -71,5 +72,10 @@ export const routes = [
     path: "/color-picker",
     label: "Color Picker",
     component: ColorPickerPege,
+  },
+  {
+    path: "/children",
+    label: "Children",
+    component: ChildrenPage,
   },
 ];
