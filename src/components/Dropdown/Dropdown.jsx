@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useStyles from "./DropdownStyle";
 
 const Dropdown = () => {
-  const [visible, setVisible] = useState("false");
+  const [visible, setVisible] = useState(false);
   const { dropdown, dropdownButton, dropdownMenu } = useStyles();
 
   const toggleVisible = () => setVisible((prevVisible) => !prevVisible);

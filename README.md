@@ -1,6 +1,6 @@
 # Geri React
 
-## Todos
+## Todo
 
 **lib moment** (_for date formating_)<br />
 https://momentjs.com/docs/

@@ -1,19 +1,36 @@
 import { createUseStyles } from "react-jss";
 
 export default createUseStyles({
-  dropdown: {
-    maxWidth: 400,
-    backgroundColor: "skyblue",
+  todoList: {
+    flexWrap: "wrap",
+    listStyle: "none",
   },
-  dropdownButton: {
+
+  todoItem: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 20,
+    width: "30%",
+    border: "1px solid grey",
+  },
+
+  text: {
+    margin: {
+      top: 0,
+      right: 10,
+      bottom: 0,
+    },
+  },
+
+  button: {
     padding: {
       top: 10,
       left: 20,
       right: 20,
       bottom: 10,
     },
-    margin: 30,
-    minWidth: 140,
+    maxWidth: 140,
     fontSize: 16,
     textTransform: "uppercase",
     cursor: "pointer",
@@ -26,9 +43,5 @@ export default createUseStyles({
     "&:hover": {
       backgroundColor: "tomato",
     },
-  },
-  dropdownMenu: {
-    backgroundColor: "tomato",
-    padding: 30,
   },
 });

@@ -12,6 +12,7 @@ import ModalClassPage from "../pages/ModalClassPage";
 import ColorPickerPege from "../pages/ColorPickerPage";
 import ChildrenPage from "../pages/ChildrenPage";
 import DropdownPage from "../pages/DropdownPage";
+import TodoListPage from "../pages/TodoListPage";
 
 export const routes = [
   {
@@ -83,5 +84,10 @@ export const routes = [
     path: "/dropdown",
     label: "Dropdown",
     component: DropdownPage,
+  },
+  {
+    path: "/todo-list",
+    label: "Todo List",
+    component: TodoListPage,
   },
 ];
