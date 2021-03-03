@@ -7,12 +7,13 @@ import AboutPage from "../pages/AboutPage";
 import RandomColorsPage from "../pages/RandomColorsPage";
 import EventPage from "../pages/EventPage";
 import FormPage from "../pages/FormPage";
-import TodoPage from "../pages/TodoPage";
+import TodosPage from "../pages/TodosPage";
 import ModalClassPage from "../pages/ModalClassPage";
 import ColorPickerPege from "../pages/ColorPickerPage";
 import ChildrenPage from "../pages/ChildrenPage";
 import DropdownPage from "../pages/DropdownPage";
 import TodoListPage from "../pages/TodoListPage";
+import TimerPage from "../pages/TimerPage";
 
 export const routes = [
   {
@@ -62,8 +63,8 @@ export const routes = [
   },
   {
     path: "/todos",
-    label: "Todo",
-    component: TodoPage,
+    label: "Todos",
+    component: TodosPage,
   },
   {
     path: "/modal-class",
@@ -89,5 +90,10 @@ export const routes = [
     path: "/todo-list",
     label: "Todo List",
     component: TodoListPage,
+  },
+  {
+    path: "/timer",
+    label: "Timer",
+    component: TimerPage,
   },
 ];

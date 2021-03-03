@@ -1,7 +1,6 @@
 import React from "react";
 import moment from "moment";
 import { makeStyles } from "@material-ui/core/styles";
-
 import {
   Card,
   CardActions,
@@ -11,7 +10,6 @@ import {
   CardActionArea,
   Divider,
 } from "@material-ui/core";
-
 import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
 
 const useStyles = makeStyles({
@@ -30,6 +28,9 @@ const TodoItem = ({
   const handleDelete = () => onDelete(id);
   const handleToggle = () => onToggle(id);
   const { todosItem } = useStyles();
+
+  // Консолим id после рендера
+  console.log("render", id);
 
   return (
     <Card className={todosItem}>
@@ -63,4 +64,10 @@ const TodoItem = ({
   );
 };
 
-export default TodoItem;
+// Аналог shouldComponentUpdate
+// Проверка на рендеринг элементов только с измененными props
+// В export default добавляем React.memo и фуркцию areEqual
+const areEqual = (prevProps, nextProps) =>
+  prevProps.todo.isDone === nextProps.todo.isDone;
+
+export default React.memo(TodoItem, areEqual);

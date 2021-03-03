@@ -1,5 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
+// import TodoItem from "./TodoItemClass"; // не удалять
 
 const TodoList = ({ todos, onDelete, onToggle }) => {
   return (

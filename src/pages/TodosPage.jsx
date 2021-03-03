@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from "react";
-import TodoInput from "../components/Todo/TodoInput";
-import TodoList from "../components/Todo/TodoList";
+import React, { Fragment, useState, useEffect } from "react";
+import TodoInput from "../components/Todos/TodoInput";
+import TodoList from "../components/Todos/TodoList";
 
-const TodoPage = () => {
+const TodosPage = () => {
   const [todos, setTodos] = useState([]);
 
   // Удаление
@@ -29,9 +29,19 @@ const TodoPage = () => {
     setTodos((prevState) => [todo, ...prevState]);
   };
 
+  // Получаем из localStorage (componentDidMount)
+  useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  }, []);
+
+  // Сохраняем в localStorage (componentDidUpdate)
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   return (
     <Fragment>
-      <h1>Todo</h1>
+      <h1>Todos</h1>
       <TodoInput onSubmit={handleSubmit} />
       <TodoList
         todos={todos}
@@ -42,4 +52,4 @@ const TodoPage = () => {
   );
 };
 
-export default TodoPage;
+export default TodosPage;
