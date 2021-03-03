@@ -1,16 +1,47 @@
 import { createUseStyles } from "react-jss";
 
 export default createUseStyles({
+  // ================== Input
+  input: {
+    display: "block",
+    padding: {
+      left: 10,
+      right: 10,
+    },
+    margin: {
+      top: 20,
+      bottom: 20,
+    },
+    width: 260,
+    height: 40,
+    fontSize: 16,
+    border: [[2, "solid", "#ccc"]],
+    borderRadius: 4,
+    outline: "none",
+
+    "&:focus": {
+      border: [[2, "solid", "skyblue"]],
+    },
+  },
+
+  // ================== ul
   todoList: {
+    display: "flex",
     flexWrap: "wrap",
+    margin: 0,
+    padding: 0,
     listStyle: "none",
   },
 
+  // ================== li
   todoItem: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     padding: 20,
+    marginRight: 10,
+    marginBottom: 10,
+    minWidth: 300,
     width: "30%",
     border: "1px solid grey",
   },
@@ -23,6 +54,7 @@ export default createUseStyles({
     },
   },
 
+  // ================== button
   button: {
     padding: {
       top: 10,
