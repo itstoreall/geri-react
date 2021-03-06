@@ -1,8 +1,19 @@
 import React, { Fragment, useState, useEffect } from "react";
 import TodoInput from "../components/Todos/TodoInput";
 import TodoList from "../components/Todos/TodoList";
+// import Loader from "../components/Loader";
+// import { css } from "@emotion/core";
+import PulseLoader from "react-spinners/PulseLoader";
+import { getTodos } from "../utils/todosAPI";
+
+// const override = css`
+//   display: block;
+//   margin: 0 auto;
+//   color: teal;
+// `;
 
 const TodosPage = () => {
+  const [isLoading, setisLoading] = useState(false);
   const [todos, setTodos] = useState([]);
 
   // Удаление
@@ -29,25 +40,53 @@ const TodosPage = () => {
     setTodos((prevState) => [todo, ...prevState]);
   };
 
-  // Получаем из localStorage (componentDidMount)
+  // componentDidMount
+  // GET todos from server > db.json (utils > todosAPI)
   useEffect(() => {
-    setTodos(JSON.parse(localStorage.getItem("todos")));
+    setisLoading(true);
+    getTodos()
+      .then((result) => setTodos(result))
+      .catch((error) => console.log(error.message))
+      .finally(() => setisLoading(false));
   }, []);
 
+  // Получаем из localStorage (componentDidMount)
+  // useEffect(() => {
+  //   setTodos(JSON.parse(localStorage.getItem("todos")));
+  // }, []);
+
   // Сохраняем в localStorage (componentDidUpdate)
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+  // useEffect(() => {
+  //   localStorage.setItem("todos", JSON.stringify(todos));
+  // }, [todos]);
 
   return (
     <Fragment>
       <h1>Todos</h1>
-      <TodoInput onSubmit={handleSubmit} />
-      <TodoList
-        todos={todos}
-        onDelete={handleDeleteTodo}
-        onToggle={handleToggleTodo}
+      <PulseLoader
+        color={"teal"}
+        loading={isLoading}
+        // css={override}
+        size={25}
+        margin={5}
       />
+
+      {!isLoading && (
+        <>
+          <TodoInput onSubmit={handleSubmit} />
+          <TodoList
+            todos={todos}
+            onDelete={handleDeleteTodo}
+            onToggle={handleToggleTodo}
+          />
+        </>
+      )}
+      <ul>
+        <li>Сохраняем в localStorage (componentDidUpdate)</li>
+        <li>Получаем из localStorage (componentDidMount)</li>
+        <li>use JSON Server</li>
+        <li>use React Spinners</li>
+      </ul>
     </Fragment>
   );
 };

@@ -1,6 +1,8 @@
 # Geri React
 
-## Todo
+## Todos
+
+**_Use:_**
 
 **lib moment** (_for date formating_)<br />
 https://momentjs.com/docs/
@@ -39,6 +41,24 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardActions, CardContent, IconButton, Checkbox, CardActionArea, Divider, Button, TextField } from "@material-ui/core";
 import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
 ```
+
+**_JSON Server_**
+
+```
+https://www.npmjs.com/package/json-server
+```
+
+```
+npm run server
+```
+
+**_React Spinners_**
+
+```
+https://www.npmjs.com/package/react-spinners
+```
+
+---
 
 **Список всех иконок**<br/>
 
