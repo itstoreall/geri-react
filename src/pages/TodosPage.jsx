@@ -1,22 +1,27 @@
 import React, { Fragment, useState, useEffect } from "react";
 import TodoInput from "../components/Todos/TodoInput";
 import TodoList from "../components/Todos/TodoList";
-// import Loader from "../components/Loader";
-// import { css } from "@emotion/core";
 import PulseLoader from "react-spinners/PulseLoader";
-import { getTodos } from "../utils/todosAPI";
-
-// const override = css`
-//   display: block;
-//   margin: 0 auto;
-//   color: teal;
-// `;
+import { getTodos, createTodo } from "../utils/todosAPI";
 
 const TodosPage = () => {
   const [isLoading, setisLoading] = useState(false);
   const [todos, setTodos] = useState([]);
 
-  // Удаление
+  // Записывае в стейт готовую тудушку
+  const handleSubmit = (todo) => {
+    if (todos.find(({ value }) => value === todo.vlue)) return;
+
+    // Показываем Spinner...
+    setisLoading(true);
+
+    createTodo(todo)
+      .then((data) => setTodos((prevState) => [data, ...prevState]))
+      .catch((error) => console.log(error.message))
+      .finally(() => setisLoading(false));
+  };
+
+  // Удаление туду
   const handleDeleteTodo = (id) =>
     setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
 
@@ -34,12 +39,6 @@ const TodosPage = () => {
     );
   };
 
-  // Записывае в стейт готовую тудушку
-  const handleSubmit = (todo) => {
-    if (todos.find(({ value }) => value === todo.vlue)) return;
-    setTodos((prevState) => [todo, ...prevState]);
-  };
-
   // componentDidMount
   // GET todos from server > db.json (utils > todosAPI)
   useEffect(() => {
@@ -50,26 +49,24 @@ const TodosPage = () => {
       .finally(() => setisLoading(false));
   }, []);
 
+  /* =============================== localStorage
+
   // Получаем из localStorage (componentDidMount)
-  // useEffect(() => {
-  //   setTodos(JSON.parse(localStorage.getItem("todos")));
-  // }, []);
+  useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+  }, []);
 
   // Сохраняем в localStorage (componentDidUpdate)
-  // useEffect(() => {
-  //   localStorage.setItem("todos", JSON.stringify(todos));
-  // }, [todos]);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  ------------------------------------------- */
 
   return (
     <Fragment>
       <h1>Todos</h1>
-      <PulseLoader
-        color={"teal"}
-        loading={isLoading}
-        // css={override}
-        size={25}
-        margin={5}
-      />
+      <PulseLoader color={"teal"} loading={isLoading} size={25} margin={5} />
 
       {!isLoading && (
         <>
@@ -86,6 +83,7 @@ const TodosPage = () => {
         <li>Получаем из localStorage (componentDidMount)</li>
         <li>use JSON Server</li>
         <li>use React Spinners</li>
+        <li>use axios</li>
       </ul>
     </Fragment>
   );

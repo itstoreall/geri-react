@@ -58,6 +58,12 @@ npm run server
 https://www.npmjs.com/package/react-spinners
 ```
 
+**_axios_**
+
+```
+https://www.npmjs.com/package/axios
+```
+
 ---
 
 **Список всех иконок**<br/>

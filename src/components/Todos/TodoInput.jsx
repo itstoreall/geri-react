@@ -40,7 +40,7 @@ const TodoInput = ({ onSubmit }) => {
     if (!value) return;
 
     const newTodo = {
-      id: Date.now(),
+      // id: Date.now(),
       date: Date.now(),
       isDone: false,
       value,
