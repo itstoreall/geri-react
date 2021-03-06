@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import TodoInput from "../components/Todos/TodoInput";
 import TodoList from "../components/Todos/TodoList";
 import PulseLoader from "react-spinners/PulseLoader";
+import ModalHook from "../components/ModalHook";
 import { getTodos, createTodo } from "../utils/todosAPI";
 
 const TodosPage = () => {
@@ -78,6 +79,7 @@ const TodosPage = () => {
           />
         </>
       )}
+      <ModalHook />
       <ul>
         <li>Сохраняем в localStorage (componentDidUpdate)</li>
         <li>Получаем из localStorage (componentDidMount)</li>
