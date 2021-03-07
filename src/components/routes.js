@@ -14,6 +14,7 @@ import ChildrenPage from "../pages/ChildrenPage";
 import DropdownPage from "../pages/DropdownPage";
 import TodoListPage from "../pages/TodoListPage";
 import TimerPage from "../pages/TimerPage";
+import Pokemon from "../pages/PokemonPage";
 
 export const routes = [
   {
@@ -95,5 +96,10 @@ export const routes = [
     path: "/timer",
     label: "Timer",
     component: TimerPage,
+  },
+  {
+    path: "/pokemon",
+    label: "Pokemon",
+    component: Pokemon,
   },
 ];
