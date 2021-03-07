@@ -9,7 +9,7 @@ const PokemonPage = () => {
 
       <ul>
         <li>use React-Toastify</li>
-        {/* <li>use axios</li> */}
+        <li>use React Icons</li>
       </ul>
     </>
   );
