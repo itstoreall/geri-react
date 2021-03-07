@@ -1,7 +1,7 @@
 import { createUseStyles } from "react-jss";
 
 export default createUseStyles({
-  modalHook__backdrop: {
+  modal__backdrop: {
     position: "fixed",
     top: 0,
     left: 0,
@@ -10,10 +10,18 @@ export default createUseStyles({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
 
-  modalHook__content: {
+  modal__title: {
+    margin: 0,
+  },
+
+  modal__content: {
     position: "absolute",
     top: "50%",
     left: "50%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     padding: 12,
     minHeight: 300,
     minWidth: 600,
@@ -24,14 +32,14 @@ export default createUseStyles({
       "0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)",
   },
 
-  modalHookBtn: {
+  modal__btn: {
     padding: {
       top: 10,
       left: 20,
       right: 20,
       bottom: 10,
     },
-    margin: 30,
+    margin: 10,
     fontSize: 16,
     textTransform: "uppercase",
     cursor: "pointer",

@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import TodoInput from "../components/Todos/TodoInput";
 import TodoList from "../components/Todos/TodoList";
 import PulseLoader from "react-spinners/PulseLoader";
-import ModalHook from "../components/ModalHook";
+import Modal from "../components/Todos/TodoModal";
 import {
   getTodos,
   createTodo,
@@ -22,37 +22,53 @@ const TodosPage = () => {
     if (todos.find(({ value }) => value === todo.vlue)) return;
 
     // Показываем Spinner...
-    setisLoading(true);
+    // setisLoading(true);
 
     createTodo(todo)
       .then((data) => setTodos((prevState) => [data, ...prevState]))
-      .catch((error) => console.log(error.message))
-      .finally(() => setisLoading(false));
+      .then(() =>
+        toast(`A new todo has been added to the state`, {
+          type: "success",
+          autoClose: 2000,
+        })
+      )
+      .catch((error) =>
+        toast(error.message, {
+          type: "error",
+          autoClose: 2000,
+        })
+      );
+    // .finally(() => setisLoading(false));
   };
 
   // Удаление туду
   const handleDeleteTodo = (id) => {
-    toast("ERROR", {
-      type: "error",
-      autoClose: 2000,
-      position: "top-right",
-    });
-    // setcurrentTodo(todos.find((todo) => todo.id === id));
-    // setShowModal(true);
+    setcurrentTodo(todos.find((todo) => todo.id === id));
+    setShowModal(true);
   };
 
   // Подтверждение удаления
   const handleOkModal = () => {
     setShowModal(false);
-    setisLoading(true);
+    // setisLoading(true);
 
     deleteTodo(currentTodo.id)
       .then((id) =>
         setTodos((prevState) => prevState.filter((todo) => todo.id !== id))
       )
-      .catch((error) => console.log(error.message))
-      .finally(() => setisLoading(false));
-    // setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+      .then(() =>
+        toast(`${currentTodo.value} successfully deleted`, {
+          type: "success",
+          autoClose: 2000,
+        })
+      )
+      .catch((error) =>
+        toast(error.message, {
+          type: "error",
+          autoClose: 2000,
+        })
+      );
+    // .finally(() => setisLoading(false));
   };
 
   // Отмена удаления туду в подтверждении
@@ -62,8 +78,6 @@ const TodosPage = () => {
   const handleToggleTodo = (id) => {
     const todo = todos.find((todo) => todo.id === id);
 
-    setisLoading(true);
-
     updateTodo(id, { isDone: !todo.isDone })
       .then((updatedTodo) =>
         setTodos((prevState) =>
@@ -72,8 +86,18 @@ const TodosPage = () => {
           )
         )
       )
-      .catch((error) => console.log(error.message))
-      .finally(() => setisLoading(false));
+      .then(() =>
+        toast(`${currentTodo.value} successfully updated`, {
+          type: "success",
+          autoClose: 2000,
+        })
+      )
+      .catch((error) =>
+        toast(error.message, {
+          type: "error",
+          autoClose: 2000,
+        })
+      );
   };
 
   // componentDidMount
@@ -82,7 +106,18 @@ const TodosPage = () => {
     setisLoading(true);
     getTodos()
       .then((result) => setTodos(result))
-      .catch((error) => console.log(error.message))
+      .then(() =>
+        toast(`All data received from the db.json`, {
+          type: "success",
+          autoClose: 2000,
+        })
+      )
+      .catch((error) =>
+        toast(error.message, {
+          type: "error",
+          autoClose: 2000,
+        })
+      )
       .finally(() => setisLoading(false));
   }, []);
 
@@ -117,7 +152,7 @@ const TodosPage = () => {
       )}
 
       {showModal && (
-        <ModalHook
+        <Modal
           text={currentTodo.value}
           onOk={handleOkModal}
           onCancel={handleCanselModal}

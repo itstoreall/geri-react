@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
 import { Button, TextField } from "@material-ui/core";
 
+// JSS
 const useStyles = createUseStyles({
   formWrap: {
     display: "flex",
@@ -11,20 +12,34 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column",
   },
+  checkboxWrap: {
+    paddingTop: 20,
+  },
+  checkbox: {
+    margin: {
+      left: 10,
+      right: 3,
+    },
+  },
   buttonsWrap: {
     display: "flex",
     justifyContent: "space-between",
+    padding: 20,
   },
 });
 
 const TodoInput = ({ onSubmit }) => {
-  const { formWrap, form, input, buttonsWrap } = useStyles();
   const [showForm, setShowForm] = useState(false);
   const [value, setValue] = useState("");
   const [urgency, setUrgency] = useState("low");
+  const s = useStyles();
 
   // Скрывает или показывает форму
-  const toggleForm = () => setShowForm((prevValue) => !prevValue);
+  const toggleForm = () => {
+    setShowForm((prevValue) => !prevValue);
+    setValue("");
+    setUrgency("low");
+  };
 
   // Записываем значение инпута в стейт
   const handleInputChange = (e) => setValue(e.target.value);
@@ -57,49 +72,52 @@ const TodoInput = ({ onSubmit }) => {
   };
 
   return (
-    <div className={formWrap}>
+    <div className={s.formWrap}>
       {showForm ? (
-        <form className={form} onSubmit={handleSubmit}>
+        <form className={s.form} onSubmit={handleSubmit}>
           <TextField
-            className={input}
+            // className={input}
             label="Enter todo"
             value={value}
             onChange={handleInputChange}
           />
-          <div>
-            <span>urgency:</span>
+          <div className={s.checkboxWrap}>
+            <span>Urgency:</span>
 
             <label>
               <input
+                className={s.checkbox}
                 type="radio"
                 value="low"
                 checked={urgency === "low"}
                 onChange={handleUrgencyChange}
               />
-              <span>low</span>
+              <span>Low</span>
             </label>
 
             <label>
               <input
+                className={s.checkbox}
                 type="radio"
                 value="medium"
                 checked={urgency === "medium"}
                 onChange={handleUrgencyChange}
               />
-              <span>medium</span>
+              <span>Medium</span>
             </label>
 
             <label>
               <input
+                className={s.checkbox}
                 type="radio"
                 value="high"
                 checked={urgency === "high"}
                 onChange={handleUrgencyChange}
               />
-              <span>high</span>
+              <span>High</span>
             </label>
           </div>
-          <div className={buttonsWrap}>
+          <div className={s.buttonsWrap}>
             <Button color="primary" onClick={toggleForm}>
               Cancel
             </Button>
