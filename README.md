@@ -14,6 +14,10 @@ https://material-ui.com/getting-started/installation/
 npm install @material-ui/core
 ```
 
+**Список всех иконок**<br/>
+
+https://material-ui.com/components/material-icons/
+
 **_В index.html > head:_**
 
 _font_<br/>
@@ -77,6 +81,20 @@ https://www.npmjs.com/package/react-toastify
 https://material-ui.com/components/material-icons/
 
 > End Todos
+
+## Pokemon
+
+**_React Icons_**
+
+```
+https://www.npmjs.com/package/react-icons
+```
+
+**_React-Toastify_**
+
+```
+https://www.npmjs.com/package/react-toastify
+```
 
 ```
 cd documents/github/geri-react

@@ -6,6 +6,11 @@ const PokemonPage = () => {
     <>
       <h1>Pokemon</h1>
       <Pokemon />
+
+      <ul>
+        <li>use React-Toastify</li>
+        {/* <li>use axios</li> */}
+      </ul>
     </>
   );
 };

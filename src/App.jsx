@@ -12,7 +12,7 @@ function App() {
     <div className={app}>
       <Navigation />
       <Content />
-      <ToastContainer />
+      <ToastContainer autoClose={2000} />
     </div>
   );
 }
