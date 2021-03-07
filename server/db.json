@@ -1,25 +1,18 @@
 {
   "todos": [
     {
-      "date": 1615065213869,
-      "isDone": false,
-      "value": "casdcas",
+      "date": 1615114834109,
+      "isDone": true,
+      "value": "02",
+      "urgency": "medium",
+      "id": 6
+    },
+    {
+      "date": 1615116324307,
+      "isDone": true,
+      "value": "05",
       "urgency": "low",
-      "id": 3
-    },
-    {
-      "date": 1615065236048,
-      "isDone": false,
-      "value": "12234545",
-      "urgency": "medium",
-      "id": 4
-    },
-    {
-      "date": 1615066020189,
-      "isDone": false,
-      "value": "03",
-      "urgency": "medium",
-      "id": 5
+      "id": 8
     }
   ]
 }

@@ -5,7 +5,7 @@ import useStyles from "./ModalHookStyles";
 // Находит рут в разметке
 const modalHookRoot = document.querySelector("#modalHook-root");
 
-const ModalHook = ({ onOk, onCancel }) => {
+const ModalHook = ({ onOk, onCancel, text }) => {
   const s = useStyles();
 
   // // После монтирования Модалки
@@ -30,6 +30,7 @@ const ModalHook = ({ onOk, onCancel }) => {
     <div className={s.modalHook__backdrop}>
       <div className={s.modalHook__content}>
         <h2>Really???</h2>
+        <p>{text}</p>
 
         <button type="button" onClick={onCancel}>
           Cancel

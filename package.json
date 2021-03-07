@@ -20,12 +20,13 @@
     "react-jss": "^10.5.1",
     "react-scripts": "4.0.2",
     "react-spinners": "^0.10.6",
+    "react-toastify": "^7.0.3",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "server": "json-server --watch server/db.json --port 2222 --delay 2000",
+    "server": "json-server --watch server/db.json --port 2222 --delay 1000",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",

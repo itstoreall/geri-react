@@ -3,11 +3,19 @@ import TodoInput from "../components/Todos/TodoInput";
 import TodoList from "../components/Todos/TodoList";
 import PulseLoader from "react-spinners/PulseLoader";
 import ModalHook from "../components/ModalHook";
-import { getTodos, createTodo } from "../utils/todosAPI";
+import {
+  getTodos,
+  createTodo,
+  deleteTodo,
+  updateTodo,
+} from "../utils/todosAPI";
+import { toast } from "react-toastify";
 
 const TodosPage = () => {
   const [isLoading, setisLoading] = useState(false);
   const [todos, setTodos] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [currentTodo, setcurrentTodo] = useState("");
 
   // Записывае в стейт готовую тудушку
   const handleSubmit = (todo) => {
@@ -23,21 +31,49 @@ const TodosPage = () => {
   };
 
   // Удаление туду
-  const handleDeleteTodo = (id) =>
-    setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+  const handleDeleteTodo = (id) => {
+    toast("ERROR", {
+      type: "error",
+      autoClose: 2000,
+      position: "top-right",
+    });
+    // setcurrentTodo(todos.find((todo) => todo.id === id));
+    // setShowModal(true);
+  };
+
+  // Подтверждение удаления
+  const handleOkModal = () => {
+    setShowModal(false);
+    setisLoading(true);
+
+    deleteTodo(currentTodo.id)
+      .then((id) =>
+        setTodos((prevState) => prevState.filter((todo) => todo.id !== id))
+      )
+      .catch((error) => console.log(error.message))
+      .finally(() => setisLoading(false));
+    // setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+  };
+
+  // Отмена удаления туду в подтверждении
+  const handleCanselModal = () => setShowModal(false);
 
   // Изменение значения одного туду
   const handleToggleTodo = (id) => {
-    setTodos((prevState) =>
-      prevState.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              isDone: !todo.isDone,
-            }
-          : todo
+    const todo = todos.find((todo) => todo.id === id);
+
+    setisLoading(true);
+
+    updateTodo(id, { isDone: !todo.isDone })
+      .then((updatedTodo) =>
+        setTodos((prevState) =>
+          prevState.map((todo) =>
+            todo.id === updatedTodo.id ? updatedTodo : todo
+          )
+        )
       )
-    );
+      .catch((error) => console.log(error.message))
+      .finally(() => setisLoading(false));
   };
 
   // componentDidMount
@@ -79,12 +115,21 @@ const TodosPage = () => {
           />
         </>
       )}
-      <ModalHook />
+
+      {showModal && (
+        <ModalHook
+          text={currentTodo.value}
+          onOk={handleOkModal}
+          onCancel={handleCanselModal}
+        />
+      )}
+
       <ul>
         <li>Сохраняем в localStorage (componentDidUpdate)</li>
         <li>Получаем из localStorage (componentDidMount)</li>
         <li>use JSON Server</li>
         <li>use React Spinners</li>
+        <li>use React-Toastify</li>
         <li>use axios</li>
       </ul>
     </Fragment>

@@ -64,6 +64,12 @@ https://www.npmjs.com/package/react-spinners
 https://www.npmjs.com/package/axios
 ```
 
+**_React-Toastify_**
+
+```
+https://www.npmjs.com/package/react-toastify
+```
+
 ---
 
 **Список всех иконок**<br/>

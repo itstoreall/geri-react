@@ -1,12 +1,17 @@
 import axios from "axios";
 
-const url = "http://localhost:2222";
+// const url = "http://localhost:2222";
+axios.defaults.baseURL = "http://localhost:2222";
 
-export const getTodos = () =>
-  axios.get(`${url}/todos`).then(({ data }) => data);
+export const getTodos = () => axios.get(`/todos`).then(({ data }) => data);
 
 export const createTodo = (payload) =>
-  axios.post(`${url}/todos`, payload).then(({ data }) => data);
+  axios.post(`/todos`, payload).then(({ data }) => data);
+
+export const deleteTodo = (id) => axios.delete(`/todos/${id}`).then(() => id);
+
+export const updateTodo = (id, payload) =>
+  axios.patch(`/todos/${id}`, payload).then(({ data }) => data);
 
 /* =============================== fetch
 
