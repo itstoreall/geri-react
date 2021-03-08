@@ -1,4 +1,8 @@
 import { Component } from "react";
+import { fetchPokemon } from "./services/pokemonAPI";
+import PokemonPendingView from "./PokemonPendingView";
+import PokemonDataView from "./PokemonDataView";
+import PokemonErrorView from "./PokemonErrorView";
 
 export default class PokemonInfo extends Component {
   state = {
@@ -15,17 +19,7 @@ export default class PokemonInfo extends Component {
       this.setState({ status: "pending" });
 
       setTimeout(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${nextName}`)
-          .then((response) => {
-            if (response.ok) {
-              return response.json();
-            }
-
-            // Отвергает ответ от бека и генерит новый error.message
-            return Promise.reject(
-              new Error(`Нет покемона с именем ${nextName}`)
-            );
-          })
+        fetchPokemon(nextName)
           .then((pokemon) => this.setState({ pokemon, status: "resolved" }))
           .catch((error) => this.setState({ error, status: "rejected" }));
       }, 1000);
@@ -34,6 +28,7 @@ export default class PokemonInfo extends Component {
 
   render() {
     const { pokemon, error, status } = this.state;
+    const { pokemonName } = this.props;
 
     // !active
     if (status === "idle") {
@@ -42,26 +37,17 @@ export default class PokemonInfo extends Component {
 
     // Loading
     if (status === "pending") {
-      return <p>Loading...</p>;
+      return <PokemonPendingView pokemonName={pokemonName} />;
     }
 
     // Error
     if (status === "rejected") {
-      return <p>{error.message}</p>;
+      return <PokemonErrorView message={error.message} />;
     }
 
     // Done
     if (status === "resolved") {
-      return (
-        <div>
-          <p>{pokemon.name}</p>
-          <img
-            src={pokemon.sprites.other["official-artwork"].front_default}
-            alt={pokemon.name}
-            width="250"
-          />
-        </div>
-      );
+      return <PokemonDataView pokemon={pokemon} />;
     }
   }
 }

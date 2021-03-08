@@ -8,7 +8,7 @@ import {
   createTodo,
   deleteTodo,
   updateTodo,
-} from "../utils/todosAPI";
+} from "../components/Todos/utils/todosAPI";
 import { toast } from "react-toastify";
 
 const TodosPage = () => {

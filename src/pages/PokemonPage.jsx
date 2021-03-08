@@ -1,5 +1,6 @@
 import React from "react";
 import Pokemon from "../components/Pokemon";
+import "../components/Pokemon/PokemonStyle.css";
 
 const PokemonPage = () => {
   return (
