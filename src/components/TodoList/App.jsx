@@ -6,6 +6,8 @@ import "./TodoList.scss";
 class App extends Component {
   state = {
     todos: initialTodos,
+    inputValue: "qweqwe",
+    license: false,
   };
 
   // Delete Todo
@@ -13,6 +15,16 @@ class App extends Component {
     this.setState((prevState) => ({
       todos: prevState.todos.filter((todo) => todo.id !== todoId),
     }));
+  };
+
+  // Input Value
+  handleInputChange = (e) => {
+    this.setState({ inputValue: e.currentTarget.value });
+  };
+
+  handleLicenseChange = (e) => {
+    console.log(e.currentTarget.checked);
+    this.setState({ license: e.currentTarget.checked });
   };
 
   render() {
@@ -30,7 +42,17 @@ class App extends Component {
           <p>Total: {TotalTodoCount}</p>
           <p>Completed: {completedTodoCount}</p>
         </div>
-        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
+        <input
+          type="text"
+          value={this.state.inputValue}
+          onChange={this.handleInputChange}
+        />
+        <TodoList
+          todos={todos}
+          onDeleteTodo={this.deleteTodo}
+          checked={this.state.license}
+          onLicenseChange={this.handleLicenseChange}
+        />
       </>
     );
   }
