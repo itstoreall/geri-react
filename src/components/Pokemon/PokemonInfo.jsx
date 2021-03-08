@@ -4,11 +4,18 @@ import PokemonPendingView from "./PokemonPendingView";
 import PokemonDataView from "./PokemonDataView";
 import PokemonErrorView from "./PokemonErrorView";
 
+const Status = {
+  IDLE: "idle",
+  PENDING: "pending",
+  RESOLVED: "resolved",
+  REJECTED: "rejected",
+};
+
 export default class PokemonInfo extends Component {
   state = {
     pokemon: null,
     error: null,
-    status: "idle",
+    status: Status.IDLE,
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -16,13 +23,15 @@ export default class PokemonInfo extends Component {
     const nextName = this.props.pokemonName;
 
     if (prevName !== nextName) {
-      this.setState({ status: "pending" });
+      this.setState({ status: Status.PENDING });
 
       setTimeout(() => {
         fetchPokemon(nextName)
-          .then((pokemon) => this.setState({ pokemon, status: "resolved" }))
-          .catch((error) => this.setState({ error, status: "rejected" }));
-      }, 1000);
+          .then((pokemon) =>
+            this.setState({ pokemon, status: Status.RESOLVED })
+          )
+          .catch((error) => this.setState({ error, status: Status.REJECTED }));
+      }, 500);
     }
   }
 
@@ -30,24 +39,41 @@ export default class PokemonInfo extends Component {
     const { pokemon, error, status } = this.state;
     const { pokemonName } = this.props;
 
-    // !active
-    if (status === "idle") {
-      return <p>Введите имя покемона</p>;
+    switch (status) {
+      case "idle": // !active
+        return <p>Введите имя покемона</p>;
+      // break;
+      case "pending": // Loading
+        return <PokemonPendingView pokemonName={pokemonName} />;
+      // break;
+      case "rejected": // Error
+        return <PokemonErrorView message={error.message} />;
+      // break;
+      case "resolved":
+        return <PokemonDataView pokemon={pokemon} />;
+      // break;
+      default:
+        break;
     }
 
-    // Loading
-    if (status === "pending") {
-      return <PokemonPendingView pokemonName={pokemonName} />;
-    }
+    // // !active
+    // if (status === "idle") {
+    //   return <p>Введите имя покемона</p>;
+    // }
 
-    // Error
-    if (status === "rejected") {
-      return <PokemonErrorView message={error.message} />;
-    }
+    // // Loading
+    // if (status === "pending") {
+    //   return <PokemonPendingView pokemonName={pokemonName} />;
+    // }
 
-    // Done
-    if (status === "resolved") {
-      return <PokemonDataView pokemon={pokemon} />;
-    }
+    // // Error
+    // if (status === "rejected") {
+    //   return <PokemonErrorView message={error.message} />;
+    // }
+
+    // // Done
+    // if (status === "resolved") {
+    //   return <PokemonDataView pokemon={pokemon} />;
+    // }
   }
 }
