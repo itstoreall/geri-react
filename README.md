@@ -46,55 +46,45 @@ import { Card, CardActions, CardContent, IconButton, Checkbox, CardActionArea, D
 import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
 ```
 
-**_JSON Server_**
-
-```
+**JSON Server**<br/>
 https://www.npmjs.com/package/json-server
-```
 
 ```
 npm run server
 ```
 
-**_React Spinners_**
-
-```
+**React Spinners**<br/>
 https://www.npmjs.com/package/react-spinners
-```
 
-**_axios_**
-
-```
+**axios**<br/>
 https://www.npmjs.com/package/axios
-```
 
-**_React-Toastify_**
-
-```
+**React-Toastify**<br/>
 https://www.npmjs.com/package/react-toastify
-```
 
 ---
 
 **Список всех иконок**<br/>
-
 https://material-ui.com/components/material-icons/
 
 > End Todos
 
 ## Pokemon
 
-**_React Icons_**
-
-```
+**React Icons**<br/>
 https://www.npmjs.com/package/react-icons
-```
 
-**_React-Toastify_**
-
-```
+**React-Toastify**<br/>
 https://www.npmjs.com/package/react-toastify
-```
+
+> End Pokemon
+
+## TodoList
+
+**shortid**<br/>
+https://www.npmjs.com/package/shortid
+
+> End TodoList
 
 ```
 cd documents/github/geri-react
