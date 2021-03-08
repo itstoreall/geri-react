@@ -1,37 +1,23 @@
 import React from "react";
-import useStyles from "./TodoListStyle";
+import "./TodoList.scss";
+import { IconButton } from "@material-ui/core";
+import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
 
-const TodoList = ({ todos, setTodos, onleLicenseChange, checked }) => {
-  const { todoList, todoItem, todoText, button } = useStyles();
-
-  // Deletes Todo
-  const deleteTodo = (todoId) => {
-    setTodos(todos.filter((todo) => todo.id !== todoId));
-  };
-
-  return (
-    <ul className={todoList}>
-      {todos.map(({ id, text }) => (
-        <li key={id} className={todoItem}>
-          <input
-            className="checkbox"
-            type="checkbox"
-            checked={checked}
-            onChange={() => onleLicenseChange(id)}
-          />
-          <p className={todoText}>{text}</p>
-          <button
-            className={button}
-            tupe="button"
-            onClick={() => deleteTodo(id)}
-            // disabled={!checked}
-          >
-            Delete
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
-};
+const TodoList = ({ todos }) => (
+  <ul className="TodoList">
+    {todos.map(({ id, text }) => (
+      <li key={id} className="TodoList__item">
+        <p className="TodoList__text">{text}</p>
+        <IconButton
+          color="primary"
+          aria-label="upload picture"
+          component="span"
+        >
+          <DeleteTwoToneIcon />
+        </IconButton>
+      </li>
+    ))}
+  </ul>
+);
 
 export default TodoList;
