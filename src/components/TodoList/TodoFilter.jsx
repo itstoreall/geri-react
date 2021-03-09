@@ -11,8 +11,8 @@ const TodoFilter = ({ filter, onChange }) => {
         value={filter}
         onChange={onChange}
         id="outlined-basic"
-        label="Outlined"
-        variant="outlined"
+        label="Filter by name"
+        // variant="outlined"
       />
     </label>
   );

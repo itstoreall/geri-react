@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Tab 1",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam corrupti quibusdam saepe quasi, necessitatibus quisquam sed dolorem!"
+  },
+  {
+    "label": "Tab 2",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam corrupti quibusdam saepe quasi, necessitatibus quisquam sed dolorem! Totam corrupti quibusdam saepe quasi."
+  },
+  {
+    "label": "Tab 3",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam corrupti quibusdam saepe quasi, necessitatibus quisquam sed dolorem! Totam corrupti quibusdam saepe quasi, necessitatibus quisquam sed dolorem!"
+  }
+]

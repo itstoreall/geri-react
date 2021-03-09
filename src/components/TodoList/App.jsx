@@ -1,16 +1,16 @@
 import { Component } from "react";
 import shortid from "shortid";
 import TodoList from "./TodoList";
-import initialTodos from "./todos.json";
 import TodoEditor from "./TodoEditor";
 import TodoFilter from "./TodoFilter";
+// import initialTodos from "./todos.json";
 import "./TodoList.scss";
 
 class App extends Component {
   state = {
-    todos: initialTodos,
-    inputValue: "",
-    license: false,
+    todos: [],
+    // inputValue: "",
+    // completed: false,
     filter: "",
   };
 
@@ -22,9 +22,10 @@ class App extends Component {
       completed: false,
     };
 
-    this.setState(({ todos }) => ({
-      todos: [todo, ...todos],
-    }));
+    text !== "" &&
+      this.setState(({ todos }) => ({
+        todos: [todo, ...todos],
+      }));
   };
 
   // Delete Todo
@@ -76,7 +77,38 @@ class App extends Component {
     );
   };
 
+  // localStorage
+  componentDidMount() {
+    const todos = localStorage.getItem("todos");
+    const parsedTodos = JSON.parse(todos);
+    console.log(parsedTodos);
+    parsedTodos && this.setState({ todos: parsedTodos });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.state.todos !== prevState.todos &&
+      localStorage.setItem("todos", JSON.stringify(this.state.todos));
+  }
+
+  /* =========================== Test Area
+
+  componentDidMount() {
+    console.log("01.1 * componentDidMount");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("01.2 * componentDidUpdate");
+    // console.log("prev:", prevState.todos);
+    // console.log("this:", this.state.todos);
+
+    this.state.todos !== prevState.todos &&
+      console.log("00.0 * Обновилось todos");
+  }
+
+  // ------------------------------------ */
+
   render() {
+    // console.log("00.1 * render"); // Test Area^
     const { todos, filter } = this.state;
     const TotalTodoCount = todos.length;
     const completedTodoCount = this.calculateCompletedTodo();
@@ -88,24 +120,9 @@ class App extends Component {
           <p>Total: {TotalTodoCount}</p>
           <p>Completed: {completedTodoCount}</p>
         </div>
+
         <TodoEditor onSubmit={this.addTodo} />
         <TodoFilter value={filter} onChange={this.changeFilter} />
-        {/* <label className="TodoFilter-label">
-          <TextField
-            // type="text"
-            className="TodoInput"
-            value={filter}
-            onChange={this.changeFilter}
-            id="outlined-basic"
-            label="Outlined"
-            variant="outlined"
-          />
-        </label> */}
-        {/* <input
-          type="text"
-          value={this.state.inputValue}
-          onChange={this.handleInputChange}
-        /> */}
         <TodoList
           todos={filteredTodos}
           onDeleteTodo={this.deleteTodo}

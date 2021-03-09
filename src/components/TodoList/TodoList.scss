@@ -1,5 +1,29 @@
 @import "styles/shared.scss"; // смотри в корне .env
 
+.TodoEditor {
+  margin-bottom: 15px;
+  min-width: 300px;
+  max-width: 500px;
+
+  .TodoEditor__textarea-label {
+    // margin-bottom: 115px;
+
+    // TextField
+    .TodoEditor__textarea {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  // Button
+  .TodoEditor__btn {
+    display: block;
+    padding: 10px;
+    // margin-top: 10px;
+    width: 100%;
+  }
+}
+
 .TodoFilter-label {
   display: block;
   margin-bottom: 20px;
@@ -17,29 +41,6 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-}
-
-.TodoEditor {
-  margin-bottom: 15px;
-  min-width: 300px;
-  max-width: 500px;
-
-  .TodoEditor__textarea-label {
-    margin-bottom: 13px;
-
-    // TextField
-    .TodoEditor__textarea {
-      width: 100%;
-    }
-  }
-
-  // Button
-  .TodoEditor__btn {
-    display: block;
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-  }
 }
 
 .TodoList__item {

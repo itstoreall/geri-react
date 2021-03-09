@@ -22,12 +22,13 @@ class TodoEditor extends Component {
         <label className="TodoEditor__textarea-label">
           <TextField
             className="TodoEditor__textarea"
+            type="text"
             value={this.state.message}
             onChange={this.handleChange}
             id="outlined-multiline-static"
             label="Todo text"
             multiline
-            rows={4}
+            rows={1}
             // defaultValue="Default Value"
             variant="outlined"
           />

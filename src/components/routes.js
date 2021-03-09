@@ -14,7 +14,8 @@ import ChildrenPage from "../pages/ChildrenPage";
 import DropdownPage from "../pages/DropdownPage";
 import TodoListPage from "../pages/TodoListPage";
 import TimerPage from "../pages/TimerPage";
-import Pokemon from "../pages/PokemonPage";
+import PokemonPage from "../pages/PokemonPage";
+import TabsPage from "../pages/TabsPage";
 
 export const routes = [
   {
@@ -100,6 +101,11 @@ export const routes = [
   {
     path: "/pokemon",
     label: "Pokemon",
-    component: Pokemon,
+    component: PokemonPage,
+  },
+  {
+    path: "/tabs",
+    label: "Tabs",
+    component: TabsPage,
   },
 ];
