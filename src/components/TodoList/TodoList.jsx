@@ -1,8 +1,8 @@
 import React from "react";
 import cN from "classnames";
-import { IconButton } from "@material-ui/core";
-import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
-// import Todo from "./Todo";
+// import { IconButton } from "@material-ui/core";
+// import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
+import Todo from "./Todo";
 import "./TodoList.scss";
 
 // import shortid from "shortid";
@@ -11,7 +11,7 @@ import "./TodoList.scss";
 const TodoList = ({
   todos,
   onDeleteTodo,
-  // checked,
+  // completed,
   // onLicenseChange,
   onToggleCompleted,
 }) => {
@@ -24,7 +24,7 @@ const TodoList = ({
             "TodoList__item--completed": completed,
           })}
         >
-          <label>
+          {/* <label>
             <input
               // id={id}
               type="checkbox"
@@ -43,15 +43,15 @@ const TodoList = ({
             component="span"
           >
             <DeleteTwoToneIcon />
-          </IconButton>
-          {/* <Todo
+          </IconButton> */}
+          <Todo
             id={id}
             text={text}
-            checked={completed}
-            onCange={() => onToggleComleted(id)}
+            completed={completed}
+            onToggleCompleted={() => onToggleCompleted(id)}
             // onLicenseChange={onLicenseChange}
             onDelete={() => onDeleteTodo(id)}
-          /> */}
+          />
         </li>
       ))}
     </ul>

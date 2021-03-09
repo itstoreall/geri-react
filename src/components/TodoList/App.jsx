@@ -77,14 +77,14 @@ class App extends Component {
     );
   };
 
-  // localStorage
+  // localStorage GET
   componentDidMount() {
     const todos = localStorage.getItem("todos");
     const parsedTodos = JSON.parse(todos);
-    console.log(parsedTodos);
     parsedTodos && this.setState({ todos: parsedTodos });
   }
 
+  // localStorage SET
   componentDidUpdate(prevProps, prevState) {
     this.state.todos !== prevState.todos &&
       localStorage.setItem("todos", JSON.stringify(this.state.todos));
@@ -126,7 +126,7 @@ class App extends Component {
         <TodoList
           todos={filteredTodos}
           onDeleteTodo={this.deleteTodo}
-          checked={this.state.license}
+          // completed={this.state.completed}
           onLicenseChange={this.handleLicenseChange}
           onToggleCompleted={this.toggleCompleted}
         />
