@@ -7,6 +7,14 @@ const TabsPage = () => {
     <>
       <h1>Tabs</h1>
       <Tabs items={tabs} />
+
+      <ul>
+        <li>
+          shouldComponentUpdate & PureComponent
+          <br />
+          !Re-render @ ${Date.now()}
+        </li>
+      </ul>
     </>
   );
 };
