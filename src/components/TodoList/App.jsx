@@ -27,6 +27,16 @@ class App extends Component {
     this.setState({ license: e.currentTarget.checked });
   };
 
+  toggleCompleted = (todoId) => {
+    console.log(todoId);
+
+    this.setState(({ todos }) => ({
+      todos: todos.map((todo) =>
+        todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
+      ),
+    }));
+  };
+
   render() {
     const { todos } = this.state;
 
@@ -52,6 +62,7 @@ class App extends Component {
           onDeleteTodo={this.deleteTodo}
           checked={this.state.license}
           onLicenseChange={this.handleLicenseChange}
+          onToggleCompleted={this.toggleCompleted}
         />
       </>
     );
