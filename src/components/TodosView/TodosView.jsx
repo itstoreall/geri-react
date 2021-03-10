@@ -1,6 +1,5 @@
 import { Component, Fragment } from "react";
 import axios from "axios";
-import shortid from "shortid";
 import TodoList from "./TodoList";
 import TodoEditor from "./TodoEditor";
 import TodoFilter from "./TodoFilter";
@@ -18,40 +17,39 @@ class TodosView extends Component {
 
   // Did Mount
   componentDidMount() {
-    axios.get("http://localhost:2222/todos").then(({ data }) => {
-      console.log(data);
-
-      this.setState({ todos: data });
-    });
+    axios
+      .get("http://localhost:2222/todos")
+      .then(({ data }) => this.setState({ todos: data }))
+      .catch((error) => console.log(error));
   }
 
   // Did Update
   componentDidUpdate(prevProps, prevState) {
-    const nextTodos = this.state.todos;
-    const prevTodos = prevState.todos;
-
-    // Сохраняет todos в localStorage после проверки обновления
-    nextTodos !== prevTodos &&
-      localStorage.setItem("todos", JSON.stringify(nextTodos));
-
+    // const nextTodos = this.state.todos;
+    // const prevTodos = prevState.todos;
+    // // Сохраняет todos в localStorage после проверки обновления
+    // nextTodos !== prevTodos &&
+    //   localStorage.setItem("todos", JSON.stringify(nextTodos));
     // Закрывает Modal после проверки обновления todos
-    nextTodos.length > prevTodos.length &&
-      prevTodos.length !== 0 &&
-      this.toggleModal();
+    // nextTodos.length > prevTodos.length &&
+    //   prevTodos.length !== 0 &&
+    //   this.toggleModal();
   }
 
   // Add Todo
   addTodo = (text) => {
     const todo = {
-      id: shortid.generate(),
       text,
       completed: false,
     };
 
-    text !== "" &&
+    axios.post("http://localhost:2222/todos", todo).then(({ data }) => {
       this.setState(({ todos }) => ({
-        todos: [todo, ...todos],
+        todos: [data, ...todos],
       }));
+
+      this.toggleModal();
+    });
   };
 
   // Delete Todo
@@ -108,6 +106,7 @@ class TodosView extends Component {
     this.setState(({ showModal }) => ({
       showModal: !showModal,
     }));
+    console.log("fff");
   };
 
   /* =========================== Test Area
@@ -148,7 +147,7 @@ class TodosView extends Component {
           color="primary"
           type="button"
         >
-          Open Modal
+          + Add Todo
         </Button>
         {showModal && (
           <Modal onClose={this.toggleModal}>

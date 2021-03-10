@@ -57,7 +57,7 @@ class TodoEditor extends Component {
           color="primary"
           type="submit"
         >
-          + Add Todo
+          Submit
         </Button>
       </form>
     );
