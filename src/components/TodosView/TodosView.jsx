@@ -6,6 +6,7 @@ import TodoFilter from "./TodoFilter";
 import { Button, IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import Modal from "../Modal";
+import todosApi from "./utils/todos-api";
 import "./TodoList.scss";
 
 class TodosView extends Component {
@@ -17,10 +18,13 @@ class TodosView extends Component {
 
   // Did Mount
   componentDidMount() {
-    axios
-      .get("http://localhost:2222/todos")
-      .then(({ data }) => this.setState({ todos: data }))
+    todosApi
+      .fetchTodos()
+      .then((todos) => this.setState({ todos }))
       .catch((error) => console.log(error));
+    // axios
+    //   .get("http://localhost:2222/todos")
+    // .then(({ data }) => this.setState({ todos: data }))
   }
 
   // Did Update
@@ -45,7 +49,7 @@ class TodosView extends Component {
 
     axios.post("http://localhost:2222/todos", todo).then(({ data }) => {
       this.setState(({ todos }) => ({
-        todos: [data, ...todos],
+        todos: [...todos, data],
       }));
 
       this.toggleModal();
@@ -54,6 +58,7 @@ class TodosView extends Component {
 
   // Delete Todo
   deleteTodo = (todoId) => {
+    axios.delete(`http://localhost:2222/todos/${todoId}`).then(console.log);
     this.setState((prevState) => ({
       todos: prevState.todos.filter((todo) => todo.id !== todoId),
     }));
@@ -69,13 +74,24 @@ class TodosView extends Component {
     this.setState({ license: e.currentTarget.checked });
   };
 
-  // Completed
+  // Completed (false/true)
   toggleCompleted = (todoId) => {
-    this.setState(({ todos }) => ({
-      todos: todos.map((todo) =>
-        todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
-      ),
-    }));
+    const todo = this.state.todos.find(({ id }) => id === todoId);
+    const { completed } = todo;
+
+    axios
+      .patch(`http://localhost:2222/todos/${todoId}`, { completed: !completed })
+      .then(({ data }) => {
+        this.setState(({ todos }) => ({
+          todos: todos.map((todo) => (todo.id === data.id ? data : todo)),
+        }));
+      });
+
+    // this.setState(({ todos }) => ({
+    //   todos: todos.map((todo) =>
+    //     todo.id === todoId ? { ...todo, completed: !todo.completed } : todo
+    //   ),
+    // }));
   };
 
   // Total Completed

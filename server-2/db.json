@@ -3,7 +3,7 @@
     {
       "id": "id-1",
       "text": "React",
-      "completed": false
+      "completed": true
     },
     {
       "id": "id-2",
@@ -16,69 +16,9 @@
       "completed": false
     },
     {
-      "text": "1",
+      "text": "efrer",
       "completed": false,
-      "id": "x7otu9v"
-    },
-    {
-      "text": "w",
-      "completed": false,
-      "id": "jdEMSlv"
-    },
-    {
-      "text": "11",
-      "completed": false,
-      "id": "5T59v-q"
-    },
-    {
-      "text": "3",
-      "completed": false,
-      "id": "wMYx_dl"
-    },
-    {
-      "text": "4",
-      "completed": false,
-      "id": "rki72CL"
-    },
-    {
-      "text": "sdcsd",
-      "completed": false,
-      "id": "PtxL_tF"
-    },
-    {
-      "text": "wfwe",
-      "completed": false,
-      "id": "rpPK2T5"
-    },
-    {
-      "text": "dds",
-      "completed": false,
-      "id": "s-CZTqn"
-    },
-    {
-      "text": "dqdq",
-      "completed": false,
-      "id": "BRTbpf-"
-    },
-    {
-      "text": "dwedw",
-      "completed": false,
-      "id": "57FsUiU"
-    },
-    {
-      "text": "e",
-      "completed": false,
-      "id": "Q5OBgFS"
-    },
-    {
-      "text": "r",
-      "completed": false,
-      "id": "OjRaocf"
-    },
-    {
-      "text": "t",
-      "completed": false,
-      "id": "4knGhl6"
+      "id": "fOBhjCg"
     }
   ]
 }
