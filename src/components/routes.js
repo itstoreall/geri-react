@@ -16,6 +16,7 @@ import TodoListPage from "../pages/TodoListPage";
 import TimerPage from "../pages/TimerPage";
 import PokemonPage from "../pages/PokemonPage";
 import TabsPage from "../pages/TabsPage";
+import TodosViewPage from "../pages/TodosViewPage";
 
 export const routes = [
   {
@@ -107,5 +108,10 @@ export const routes = [
     path: "/tabs",
     label: "Tabs",
     component: TabsPage,
+  },
+  {
+    path: "/todos-view",
+    label: "Todos View",
+    component: TodosViewPage,
   },
 ];
