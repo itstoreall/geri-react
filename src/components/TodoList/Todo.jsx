@@ -16,13 +16,6 @@ const Todo = ({ id, text, completed, onToggleCompleted, onDelete }) => {
           color="primary"
           inputProps={{ "aria-label": "secondary checkbox" }}
         />
-        {/* <input
-          // id={id}
-          type="checkbox"
-          className="TodoList__checkbox"
-          checked={completed}
-          onChange={onToggleCompleted}
-        /> */}
       </label>
       <p className="TodoList__text">{text}</p>
       <IconButton
@@ -30,7 +23,7 @@ const Todo = ({ id, text, completed, onToggleCompleted, onDelete }) => {
         onClick={onDelete}
         disabled={!completed}
         color="primary"
-        aria-label="upload picture"
+        aria-label="delete todo"
         component="span"
       >
         <DeleteTwoToneIcon />

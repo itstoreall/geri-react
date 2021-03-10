@@ -1,18 +1,42 @@
-import { Component } from "react";
+import { Component, Fragment } from "react";
 import shortid from "shortid";
 import TodoList from "./TodoList";
 import TodoEditor from "./TodoEditor";
 import TodoFilter from "./TodoFilter";
-// import initialTodos from "./todos.json";
+import { Button, IconButton } from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
+import Modal from "../Modal";
 import "./TodoList.scss";
 
 class App extends Component {
   state = {
     todos: [],
-    // inputValue: "",
-    // completed: false,
     filter: "",
+    showModal: false,
   };
+
+  // Did Mount
+  componentDidMount() {
+    // Записывает todos из localStorage в стейт
+    const todos = localStorage.getItem("todos");
+    const parsedTodos = JSON.parse(todos);
+    parsedTodos && this.setState({ todos: parsedTodos });
+  }
+
+  // Did Update
+  componentDidUpdate(prevProps, prevState) {
+    const nextTodos = this.state.todos;
+    const prevTodos = prevState.todos;
+
+    // Сохраняет todos в localStorage после проверки обновления
+    nextTodos !== prevTodos &&
+      localStorage.setItem("todos", JSON.stringify(nextTodos));
+
+    // Закрывает Modal после проверки обновления todos
+    nextTodos.length > prevTodos.length &&
+      prevTodos.length !== 0 &&
+      this.toggleModal();
+  }
 
   // Add Todo
   addTodo = (text) => {
@@ -77,18 +101,12 @@ class App extends Component {
     );
   };
 
-  // localStorage GET
-  componentDidMount() {
-    const todos = localStorage.getItem("todos");
-    const parsedTodos = JSON.parse(todos);
-    parsedTodos && this.setState({ todos: parsedTodos });
-  }
-
-  // localStorage SET
-  componentDidUpdate(prevProps, prevState) {
-    this.state.todos !== prevState.todos &&
-      localStorage.setItem("todos", JSON.stringify(this.state.todos));
-  }
+  // Toggle Modal
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
 
   /* =========================== Test Area
 
@@ -109,28 +127,52 @@ class App extends Component {
 
   render() {
     // console.log("00.1 * render"); // Test Area^
-    const { todos, filter } = this.state;
+    const { todos, filter, showModal } = this.state;
     const TotalTodoCount = todos.length;
     const completedTodoCount = this.calculateCompletedTodo();
     const filteredTodos = this.getFilteredTodos();
 
     return (
-      <>
+      <Fragment>
         <div>
           <p>Total: {TotalTodoCount}</p>
           <p>Completed: {completedTodoCount}</p>
         </div>
 
-        <TodoEditor onSubmit={this.addTodo} />
+        <Button
+          className="ModaOpen__btn"
+          onClick={this.toggleModal}
+          variant="contained"
+          color="primary"
+          type="button"
+        >
+          Open Modal
+        </Button>
+        {showModal && (
+          <Modal onClose={this.toggleModal}>
+            <span className="ModaClose__btn-wrap">
+              <IconButton
+                className="ModaClose__btn"
+                onClick={this.toggleModal}
+                color="primary"
+                aria-label="upload picture"
+                component="span"
+              >
+                <CloseIcon />
+              </IconButton>
+            </span>
+            <TodoEditor onSubmit={this.addTodo} />
+          </Modal>
+        )}
+
         <TodoFilter value={filter} onChange={this.changeFilter} />
         <TodoList
           todos={filteredTodos}
           onDeleteTodo={this.deleteTodo}
-          // completed={this.state.completed}
           onLicenseChange={this.handleLicenseChange}
           onToggleCompleted={this.toggleCompleted}
         />
-      </>
+      </Fragment>
     );
   }
 }

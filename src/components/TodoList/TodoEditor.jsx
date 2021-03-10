@@ -6,14 +6,32 @@ class TodoEditor extends Component {
     message: "",
   };
 
+  // addEventListener keydown
+  componentDidMount() {
+    window.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  // removeEventListener keydown
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.handleKeyDown);
+  }
+
+  // Input value
   handleChange = (e) => {
     this.setState({ message: e.currentTarget.value });
   };
 
+  // Submit by Button
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.onSubmit(this.state.message);
     this.setState({ message: "" });
+  };
+
+  // Submit by Enter
+  handleKeyDown = (e) => {
+    const { message } = this.state;
+    e.code === "Enter" && message !== "" && this.props.onSubmit(message);
   };
 
   render() {
@@ -28,15 +46,11 @@ class TodoEditor extends Component {
             id="outlined-multiline-static"
             label="Todo text"
             multiline
-            rows={1}
+            rows={2}
             // defaultValue="Default Value"
             variant="outlined"
           />
         </label>
-        {/* <textarea
-          value={this.state.message}
-          onChange={this.handleChange}
-        ></textarea> */}
         <Button
           className="TodoEditor__btn"
           variant="contained"
@@ -45,9 +59,6 @@ class TodoEditor extends Component {
         >
           + Add Todo
         </Button>
-        {/* <button type="button" className="TodoEditor__btn">
-          + Add Todo
-        </button> */}
       </form>
     );
   }
