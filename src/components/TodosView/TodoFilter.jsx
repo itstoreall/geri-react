@@ -2,13 +2,13 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 import "./TodoList.scss";
 
-const TodoFilter = ({ filter, onChange }) => {
+const TodoFilter = ({ value, onChange }) => {
   return (
     <label className="TodoFilter-label">
       <TextField
-        // type="text"
+        type="text"
         className="TodoInput"
-        value={filter}
+        value={value}
         onChange={onChange}
         id="outlined-basic"
         label="Filter by name"

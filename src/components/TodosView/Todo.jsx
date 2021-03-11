@@ -4,7 +4,7 @@ import DeleteTwoToneIcon from "@material-ui/icons/DeleteTwoTone";
 import Checkbox from "@material-ui/core/Checkbox";
 import "./TodoList.scss";
 
-const Todo = ({ id, text, completed, onToggleCompleted, onDelete }) => {
+const Todo = ({ text, completed, onToggleCompleted, onDelete }) => {
   return (
     <>
       <label>
@@ -19,6 +19,7 @@ const Todo = ({ id, text, completed, onToggleCompleted, onDelete }) => {
       </label>
       <p className="TodoList__text">{text}</p>
       <IconButton
+        type="button"
         className="TodoList__btn"
         onClick={onDelete}
         disabled={!completed}
