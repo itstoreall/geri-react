@@ -11,6 +11,7 @@ const PokemonPage = () => {
       <ul>
         <li>use React-Toastify</li>
         <li>use React Icons</li>
+        <li>use server</li>
       </ul>
     </>
   );

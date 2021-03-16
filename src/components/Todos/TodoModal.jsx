@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import useStyles from "./TodoModalStyles";
 
 // Находит рут в разметке
-const TodoModalRoot = document.querySelector("#TodoModal-root");
+const todoModalRoot = document.querySelector("#todoModal-root");
 
 const TodoModal = ({ onOk, onCancel, text }) => {
   const s = useStyles();
@@ -24,7 +24,7 @@ const TodoModal = ({ onOk, onCancel, text }) => {
         </div>
       </div>
     </div>,
-    TodoModalRoot
+    todoModalRoot
   );
 };
 

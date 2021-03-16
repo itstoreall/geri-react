@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const url = "http://localhost:2222";
-axios.defaults.baseURL = "http://localhost:2222";
+axios.defaults.baseURL = "http://localhost:2221";
 
 export const getTodos = () => axios.get(`/todos`).then(({ data }) => data);
 

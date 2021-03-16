@@ -1,28 +1,25 @@
 {
   "todos": [
     {
-      "date": 1615124507210,
+      "date": 1615479024039,
       "isDone": false,
-      "value": "09",
+      "value": "Todo 1",
+      "urgency": "low",
+      "id": 1
+    },
+    {
+      "date": 1615479034181,
+      "isDone": false,
+      "value": "Todo 2",
+      "urgency": "medium",
+      "id": 2
+    },
+    {
+      "date": 1615479042821,
+      "isDone": false,
+      "value": "Todo 3",
       "urgency": "high",
-      "id": 15,
-      "completed": true
-    },
-    {
-      "date": 1615124625908,
-      "isDone": true,
-      "value": "011",
-      "urgency": "low",
-      "id": 16,
-      "completed": true
-    },
-    {
-      "date": 1615124659561,
-      "isDone": true,
-      "value": "012",
-      "urgency": "low",
-      "id": 17,
-      "completed": true
+      "id": 3
     }
   ]
 }

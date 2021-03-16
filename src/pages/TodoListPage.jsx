@@ -4,6 +4,10 @@ const App = () => (
   <>
     <h1>Todo List</h1>
     <TodoListPage />
+
+    <ul>
+      <li>use localStorage</li>
+    </ul>
   </>
 );
 

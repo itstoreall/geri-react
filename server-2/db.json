@@ -3,17 +3,19 @@
     {
       "id": "id-1",
       "text": "React",
-      "completed": false
+      "completed": true,
+      "isDone": true
     },
     {
       "id": "id-2",
       "text": "Router",
-      "completed": false
+      "completed": true,
+      "isDone": true
     },
     {
-      "id": "id-3",
       "text": "Redux",
-      "completed": false
+      "completed": false,
+      "id": "O967gnB"
     }
   ]
 }

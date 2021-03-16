@@ -160,9 +160,7 @@ const TodosPage = () => {
       )}
 
       <ul>
-        <li>Сохраняем в localStorage (componentDidUpdate)</li>
-        <li>Получаем из localStorage (componentDidMount)</li>
-        <li>use JSON Server</li>
+        <li>use JSON Server 2221</li>
         <li>use React Spinners</li>
         <li>use React-Toastify</li>
         <li>use axios</li>

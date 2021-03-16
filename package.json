@@ -20,6 +20,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-jss": "^10.5.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "react-spinners": "^0.10.6",
     "react-toastify": "^7.0.3",
@@ -29,8 +30,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "server": "json-server --watch server/db.json --port 2222 --delay 700",
-    "server2": "json-server --watch server-2/db.json --port 2222 --delay 700",
+    "server": "json-server --watch server/db.json --port 2221 --delay 500",
+    "server2": "json-server --watch server-2/db.json --port 2222 --delay 500",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
