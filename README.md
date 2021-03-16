@@ -89,6 +89,16 @@ https://www.npmjs.com/package/classnames
 
 > End TodoList
 
+## User Detail
+
+**Express**<br/>
+https://expressjs.com/en/starter/installing.html
+
+**nodemon**<br/>
+https://www.npmjs.com/package/nodemon
+
+> End TodoList
+
 ```
 cd documents/github/geri-react
 ```
