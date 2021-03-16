@@ -23,7 +23,7 @@
       },
       "email": "brad.gibson@example.com",
       "login": {
-        "uuid": "1155e77ee-ba6d-486f-95ce-0e0c0fb4b919",
+        "uuid": "1",
         "username": "silverswan131",
         "password": "firewall",
         "salt": "TQA1Gz7x",
@@ -75,7 +75,7 @@
       },
       "email": "brad.gibson@example.com",
       "login": {
-        "uuid": "2155e77ee-ba6d-486f-95ce-0e0c0fb4b919",
+        "uuid": "2",
         "username": "silverswan131",
         "password": "firewall",
         "salt": "TQA1Gz7x",
@@ -127,7 +127,7 @@
       },
       "email": "brad.gibson@example.com",
       "login": {
-        "uuid": "3155e77ee-ba6d-486f-95ce-0e0c0fb4b919",
+        "uuid": "3",
         "username": "silverswan131",
         "password": "firewall",
         "salt": "TQA1Gz7x",
@@ -179,7 +179,7 @@
       },
       "email": "brad.gibson@example.com",
       "login": {
-        "uuid": "4155e77ee-ba6d-486f-95ce-0e0c0fb4b919",
+        "uuid": "4",
         "username": "silverswan131",
         "password": "firewall",
         "salt": "TQA1Gz7x",
@@ -231,7 +231,7 @@
       },
       "email": "brad.gibson@example.com",
       "login": {
-        "uuid": "5155e77ee-ba6d-486f-95ce-0e0c0fb4b919",
+        "uuid": "5",
         "username": "silverswan131",
         "password": "firewall",
         "salt": "TQA1Gz7x",
@@ -283,7 +283,7 @@
       },
       "email": "brad.gibson@example.com",
       "login": {
-        "uuid": "6155e77ee-ba6d-486f-95ce-0e0c0fb4b919",
+        "uuid": "6",
         "username": "silverswan131",
         "password": "firewall",
         "salt": "TQA1Gz7x",

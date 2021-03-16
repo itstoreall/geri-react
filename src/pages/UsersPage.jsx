@@ -1,10 +1,10 @@
 import React from 'react';
 import Users from '../components/Users';
 
-const UsersPage = () => (
+const UsersPage = ({ location }) => (
   <>
     <h1>Users Page</h1>
-    <Users />
+    <Users location={location} />
   </>
 );
 

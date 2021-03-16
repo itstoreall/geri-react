@@ -25,7 +25,7 @@ const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "home" */)
 );
 const UsersPage = lazy(() =>
-  import('../pages/UserPage' /* webpackChunkName: "User" */)
+  import('../pages/UsersPage' /* webpackChunkName: "Users" */)
 );
 const UserDetailsPage = lazy(() =>
   import('../pages/UserDetailsPage' /* webpackChunkName: "UserDetails" */)
