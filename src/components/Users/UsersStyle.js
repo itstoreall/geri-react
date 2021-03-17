@@ -4,5 +4,9 @@ export default createUseStyles({
   list: {
     display: 'flex',
     flexDirection: 'column',
+
+    '& > input': {
+      marginBottom: 20,
+    },
   },
 });
