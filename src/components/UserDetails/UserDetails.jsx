@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import useStyles from './UsersDetailsStyle';
 
 const UserDetails = ({
+  location,
   history,
   match: {
     params: { id },
@@ -20,7 +21,7 @@ const UserDetails = ({
   const handleHistoryBtn = () =>
     history.push({
       pathname: '/users',
-      search: '?filter=1',
+      search: `?filter=${location.state.filter}`,
     });
 
   const { picture, name, login, email } = user;

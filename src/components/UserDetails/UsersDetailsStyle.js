@@ -11,7 +11,13 @@ export default createUseStyles({
       cursor: 'pointer',
     },
 
+    '& img': {
+      margin: 0,
+      marginBottom: 15,
+    },
+
     '& p': {
+      margin: 0,
       marginBottom: 5,
     },
 

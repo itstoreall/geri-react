@@ -4,8 +4,8 @@
       "gender": "male",
       "name": {
         "title": "mr",
-        "first": "Гоша",
-        "last": "Иванов"
+        "first": "Goga",
+        "last": "Vasin"
       },
       "location": {
         "street": "9278 new road",
@@ -56,8 +56,8 @@
       "gender": "male",
       "name": {
         "title": "mr",
-        "first": "Вася",
-        "last": "Теркин"
+        "first": "Vasya",
+        "last": "Terkin"
       },
       "location": {
         "street": "9278 new road",
@@ -108,8 +108,8 @@
       "gender": "male",
       "name": {
         "title": "mr",
-        "first": "Петя",
-        "last": "Петров"
+        "first": "Petya",
+        "last": "Petrov"
       },
       "location": {
         "street": "9278 new road",
@@ -160,8 +160,8 @@
       "gender": "male",
       "name": {
         "title": "mr",
-        "first": "Николай",
-        "last": "Кукухин"
+        "first": "Kolya",
+        "last": "Kukuhin"
       },
       "location": {
         "street": "9278 new road",
@@ -212,8 +212,8 @@
       "gender": "male",
       "name": {
         "title": "mr",
-        "first": "Олег",
-        "last": "Капун"
+        "first": "Oleg",
+        "last": "Kapun"
       },
       "location": {
         "street": "9278 new road",
@@ -264,8 +264,8 @@
       "gender": "male",
       "name": {
         "title": "mr",
-        "first": "Саша",
-        "last": "Огонь"
+        "first": "Sasha",
+        "last": "Fedorov"
       },
       "location": {
         "street": "9278 new road",

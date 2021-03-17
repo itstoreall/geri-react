@@ -97,6 +97,9 @@ https://expressjs.com/en/starter/installing.html
 **nodemon**<br/>
 https://www.npmjs.com/package/nodemon
 
+**query-string**<br/>
+https://www.npmjs.com/package/query-string
+
 > End TodoList
 
 ```
