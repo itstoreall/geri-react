@@ -1,0 +1,2 @@
+(this["webpackJsonpgeri-react"]=this["webpackJsonpgeri-react"]||[]).push([[20],{190:function(e,t,r){"use strict";r.r(t);r(0);var c=r(4);t.default=function(){return Object(c.jsx)("h1",{children:"Home Page"})}}}]);
+//# sourceMappingURL=home.f81d1f9e.chunk.js.map
