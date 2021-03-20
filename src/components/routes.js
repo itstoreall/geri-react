@@ -72,6 +72,9 @@ const EventPage = lazy(() =>
 const BooksPage = lazy(() =>
   import('../pages/BooksPage' /* webpackChunkName: "Books" */)
 );
+const HocPage = lazy(() =>
+  import('../pages/HocPage' /* webpackChunkName: "Hoc" */)
+);
 const AboutPage = lazy(() =>
   import('../pages/AboutPage' /* webpackChunkName: "About" */)
 );
@@ -92,14 +95,21 @@ export const routes = [
   },
   {
     path: '/users',
-    label: 'Users',
+    label: 'Users .s',
     component: UsersPage,
     exact: true,
     showInMenu: true,
   },
   {
+    path: '/todos',
+    label: 'Todos .s',
+    component: TodosPage,
+    exact: false,
+    showInMenu: true,
+  },
+  {
     path: '/todos-view',
-    label: 'Todos View',
+    label: 'Todos View .s',
     component: TodosViewPage,
     exact: false,
     showInMenu: true,
@@ -108,13 +118,6 @@ export const routes = [
     path: '/todo-list',
     label: 'Todo List',
     component: TodoListPage,
-    exact: false,
-    showInMenu: true,
-  },
-  {
-    path: '/todos',
-    label: 'Todos',
-    component: TodosPage,
     exact: false,
     showInMenu: true,
   },
@@ -192,6 +195,13 @@ export const routes = [
     path: '/books',
     label: 'Books',
     component: BooksPage,
+    exact: false,
+    showInMenu: true,
+  },
+  {
+    path: '/hoc',
+    label: 'HOC',
+    component: HocPage,
     exact: false,
     showInMenu: true,
   },
