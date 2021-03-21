@@ -100,7 +100,7 @@ https://www.npmjs.com/package/nodemon
 **query-string**<br/>
 https://www.npmjs.com/package/query-string
 
-> End TodoList
+> End User Detail
 
 ```
 cd documents/github/geri-react
