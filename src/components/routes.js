@@ -210,5 +210,6 @@ export const routes = [
     label: 'About',
     component: AboutPage,
     exact: false,
+    showInMenu: true,
   },
 ];
