@@ -2,7 +2,7 @@
   "name": "geri-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://itstoreall.github.io/geri-react",
+  "homepage": "http://itstoreall.github.io/geri-react",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -27,6 +27,7 @@
     "react-scripts": "4.0.2",
     "react-spinners": "^0.10.6",
     "react-toastify": "^7.0.3",
+    "redux": "^4.0.5",
     "shortid": "^2.2.16",
     "web-vitals": "^1.1.0"
   },

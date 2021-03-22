@@ -102,6 +102,13 @@ https://www.npmjs.com/package/query-string
 
 > End User Detail
 
+## Counter
+
+**Redux**<br/>
+https://redux.js.org/introduction/getting-started
+
+> End User Detail
+
 ```
 cd documents/github/geri-react
 ```

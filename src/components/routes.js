@@ -1,28 +1,10 @@
 import { lazy } from 'react';
 
-// import AboutPage from '../pages/AboutPage';
-// import TestPage from '../pages/TestPage';
-// import HomeWorksPage from '../pages/HomeWorksPage';
-// import UsersPage from '../pages/UserPage';
-// import HomePage from '../pages/HomePage';
-// import BooksPage from '../pages/BooksPage';
-// import EventPage from '../pages/EventPage';
-// import FormPage from '../pages/FormPage';
-// import TimerPage from '../pages/TimerPage';
-// import ModalClassPage from '../pages/ModalClassPage';
-// import TabsPage from '../pages/TabsPage';
-// import DropdownPage from '../pages/DropdownPage';
-// import ChildrenPage from '../pages/ChildrenPage';
-// import RandomColorsPage from '../pages/RandomColorsPage';
-// import ColorPickerPege from '../pages/ColorPickerPage';
-// import PokemonPage from '../pages/PokemonPage';
-// import TodosPage from '../pages/TodosPage';
-// import TodoListPage from '../pages/TodoListPage';
-// import TodosViewPage from '../pages/TodosViewPage';
-// import UserDetailsPage from '../pages/UserDetailsPage';
-
 const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "home" */)
+);
+const CounterPage = lazy(() =>
+  import('../pages/CounterPage' /* webpackChunkName: "Counter" */)
 );
 const UsersPage = lazy(() =>
   import('../pages/UsersPage' /* webpackChunkName: "Users" */)
@@ -82,9 +64,15 @@ const AboutPage = lazy(() =>
 export const routes = [
   {
     path: '/',
-    label: 'Hame',
+    label: 'Home',
     component: HomePage,
     exact: true,
+    showInMenu: true,
+  },
+  {
+    path: '/counter',
+    label: 'Counter',
+    component: CounterPage,
     showInMenu: true,
   },
   {
