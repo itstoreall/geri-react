@@ -107,6 +107,9 @@ https://www.npmjs.com/package/query-string
 **Redux**<br/>
 https://redux.js.org/introduction/getting-started
 
+**React Redux**<br/>
+https://react-redux.js.org/introduction/getting-started
+
 > End User Detail
 
 ```

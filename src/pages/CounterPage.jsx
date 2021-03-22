@@ -5,7 +5,12 @@ const CounterPage = () => {
   return (
     <>
       <h1>Counter</h1>
-      <Counter/>
+      <Counter />
+
+      <ul>
+        <li>use Redux</li>
+        <li>use React Redux</li>
+      </ul>
     </>
   );
 };
