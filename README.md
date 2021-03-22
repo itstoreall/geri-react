@@ -110,6 +110,9 @@ https://redux.js.org/introduction/getting-started
 **React Redux**<br/>
 https://react-redux.js.org/introduction/getting-started
 
+**Redux DevTools Extension**
+http://extension.remotedev.io/#usage
+
 > End User Detail
 
 ```

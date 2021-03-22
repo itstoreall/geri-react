@@ -1,23 +1,26 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
-  multyCounter: {
-    padding: {
-      top: 10,
-      left: 20,
-      right: 20,
-      bottom: 10,
+  counter: {
+    display: 'inline-block',
+    marginBottom: 50,
+    textAlign: 'center',
+
+    '& span': {
+      display: 'block',
+      marginBottom: 20,
+      width: '100%',
+      fontSize: 32,
     },
   },
 
-  multyCounterBtn: {
+  counterBtn: {
     padding: {
       top: 10,
       left: 20,
       right: 20,
       bottom: 10,
     },
-    margin: 30,
     fontSize: 16,
     textTransform: 'uppercase',
     cursor: 'pointer',
@@ -26,6 +29,10 @@ export default createUseStyles({
     border: 'none',
     borderRadius: 4,
     outline: 'none',
+
+    '&:first-child': {
+      marginRight: 20,
+    },
 
     '&:hover': {
       backgroundColor: 'tomato',

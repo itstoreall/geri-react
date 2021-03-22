@@ -1,15 +1,18 @@
 import React from 'react';
+import useStyles from './CounterStyles';
 
-const Controls = ({ onIncrement, onDecrement }) => {
+const Controls = ({ step, onIncrement, onDecrement }) => {
+  const s = useStyles();
+
   return (
-    <>
-      <button type='button' onClick={onIncrement}>
-        +
+    <div className={s.counterBtnWrap}>
+      <button className={s.counterBtn} type='button' onClick={onIncrement}>
+        + {step}
       </button>
-      <button type='button' onClick={onDecrement}>
-        -
+      <button className={s.counterBtn} type='button' onClick={onDecrement}>
+        - {step}
       </button>
-    </>
+    </div>
   );
 };
 
