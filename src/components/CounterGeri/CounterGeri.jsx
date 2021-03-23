@@ -13,6 +13,7 @@ const CounterGeri = ({ value, increment, decrement }) => {
   return (
     <div className={s.counter}>
       <select
+        className={s.select}
         value={selectValue}
         onChange={(e) => setSelectValue(Number(e.target.value))}
       >

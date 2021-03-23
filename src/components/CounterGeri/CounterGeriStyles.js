@@ -14,6 +14,20 @@ export default createUseStyles({
     },
   },
 
+  select: {
+    marginRight: 20,
+    fontSize: 18,
+    backgroundColor: '#fff',
+    border: 'none',
+    borderRadius: 4,
+    outline: 'none',
+  },
+
+  'select > option': {
+    color: 'green',
+    fontSize: 52,
+  },
+
   counterBtn: {
     padding: {
       top: 10,
