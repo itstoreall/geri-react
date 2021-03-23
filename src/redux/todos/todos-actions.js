@@ -10,4 +10,14 @@ const addTodo = (text) => ({
   },
 });
 
-export default { addTodo }; // eslint-disable-line
+const deleteTodo = (todoId) => ({
+  type: types.DELETE,
+  payload: todoId,
+});
+
+const changeFilter = (value) => ({
+  type: types.CHANGE_FILTER,
+  payload: value,
+});
+
+export default { addTodo, deleteTodo, changeFilter }; // eslint-disable-line

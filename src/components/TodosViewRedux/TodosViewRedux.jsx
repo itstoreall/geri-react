@@ -1,7 +1,7 @@
-import { Component, Fragment } from 'react';
-// import TodoList from './TodoList';
+import { Component } from 'react';
+import TodoList from './TodoListRedux';
 import TodoEditor from './TodoEditorRedux';
-// import TodoFilter from './TodoFilter';
+import TodoFilter from './TodoFilterRedux';
 import { Button, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from '../Modal';
@@ -32,28 +32,6 @@ class TodosViewRedux extends Component {
   //     localStorage.setItem('todos', JSON.stringify(nextTodos));
   // }
 
-  // Add Todo
-  // addTodo = (text) => {
-  //   const todoData = {
-  //     text,
-  //     completed: false,
-  //   };
-
-  //   todosApi.addTodo(todoData).then((todo) => {
-  //     this.setState(({ todos }) => ({ todos: [...todos, todo] }));
-  //     this.toggleModal();
-  //   });
-  // };
-
-  // Delete Todo
-  deleteTodo = (todoId) => {
-    todosApi.deleteTodo(todoId).then(() => {
-      this.setState(({ todos }) => ({
-        todos: todos.filter(({ id }) => id !== todoId),
-      }));
-    });
-  };
-
   // Toggle Completed (false/true)
   toggleCompleted = (todoId) => {
     const todo = this.state.todos.find(({ id }) => id === todoId);
@@ -67,21 +45,6 @@ class TodosViewRedux extends Component {
         ),
       }));
     });
-  };
-
-  // Filter
-  changeFilter = (e) => {
-    this.setState({ filter: e.currentTarget.value });
-  };
-
-  // Filtered Todos (Computable data)
-  getVisibleTodos = () => {
-    const { filter, todos } = this.state;
-    const normalizedFilter = filter.toLowerCase();
-
-    return todos.filter(({ text }) =>
-      text.toLowerCase().includes(normalizedFilter)
-    );
   };
 
   // Total Completed
@@ -115,7 +78,6 @@ class TodosViewRedux extends Component {
     const { showModal } = this.state;
     // const TotalTodoCount = todos.length;
     // const completedTodoCount = this.calculateCompletedTodo();
-    // const filteredTodos = this.getVisibleTodos();
 
     return (
       <>
@@ -150,13 +112,8 @@ class TodosViewRedux extends Component {
           </Modal>
         )}
 
-        {/* <TodoFilter value={filter} onChange={this.changeFilter} /> */}
-        {/* <TodoList
-          todos={filteredTodos}
-          onDeleteTodo={this.deleteTodo}
-          onLicenseChange={this.handleLicenseChange}
-          onToggleCompleted={this.toggleCompleted}
-        /> */}
+        <TodoFilter />
+        <TodoList />
       </>
     );
   }
