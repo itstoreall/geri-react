@@ -21,6 +21,9 @@ const TodoListPage = lazy(() =>
 const TodosViewPage = lazy(() =>
   import('../pages/TodosViewPage' /* webpackChunkName: "TodosView" */)
 );
+const TodosViewReduxPage = lazy(() =>
+  import('../pages/TodosViewReduxPage' /* webpackChunkName: "TodosViewRedux" */)
+);
 const PokemonPage = lazy(() =>
   import('../pages/PokemonPage' /* webpackChunkName: "Pokemon" */)
 );
@@ -99,6 +102,13 @@ export const routes = [
     path: '/todos-view',
     label: 'Todos View .s',
     component: TodosViewPage,
+    exact: false,
+    showInMenu: true,
+  },
+  {
+    path: '/todos-view-redux',
+    label: 'Todos View Redux',
+    component: TodosViewReduxPage,
     exact: false,
     showInMenu: true,
   },
