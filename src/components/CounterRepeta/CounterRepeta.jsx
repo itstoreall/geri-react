@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../redux/counter/counter-actions';
 import useStyles from './CounterStyles';
 
-function Counter({ value, step, onIncrement, onDecrement }) {
+function CounterRepeta({ value, step, onIncrement, onDecrement }) {
   const s = useStyles();
 
   return (
@@ -29,4 +29,4 @@ const mapDispatchToProps = (dispatch) => ({
   onDecrement: (value) => dispatch(actions.decrement(value)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(CounterRepeta);

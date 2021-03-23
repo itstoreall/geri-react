@@ -102,7 +102,7 @@ https://www.npmjs.com/package/query-string
 
 > End User Detail
 
-## Counter
+## Counter (Repeta, Geri)
 
 **Redux**<br/>
 https://redux.js.org/introduction/getting-started
@@ -113,7 +113,7 @@ https://react-redux.js.org/introduction/getting-started
 **Redux DevTools Extension**
 http://extension.remotedev.io/#usage
 
-> End User Detail
+> End Counter
 
 ```
 cd documents/github/geri-react

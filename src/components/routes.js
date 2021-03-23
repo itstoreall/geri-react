@@ -3,8 +3,11 @@ import { lazy } from 'react';
 const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "home" */)
 );
-const CounterPage = lazy(() =>
-  import('../pages/CounterPage' /* webpackChunkName: "Counter" */)
+const CounterRepetaPage = lazy(() =>
+  import('../pages/CounterRepetaPage' /* webpackChunkName: "CounterRepeta" */)
+);
+const CounterGeriPage = lazy(() =>
+  import('../pages/CounterGeriPage' /* webpackChunkName: "CounterGeri" */)
 );
 const UsersPage = lazy(() =>
   import('../pages/UsersPage' /* webpackChunkName: "Users" */)
@@ -73,9 +76,15 @@ export const routes = [
     showInMenu: true,
   },
   {
-    path: '/counter',
-    label: 'Counter',
-    component: CounterPage,
+    path: '/counter-repeta',
+    label: 'Counter (Repeta)',
+    component: CounterRepetaPage,
+    showInMenu: true,
+  },
+  {
+    path: '/counter-geri',
+    label: 'Counter (Geri)',
+    component: CounterGeriPage,
     showInMenu: true,
   },
   {
