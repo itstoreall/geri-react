@@ -9,7 +9,7 @@ import store from './redux/store';
 import 'modern-normalize/modern-normalize.css';
 import './styles/base.scss';
 
-console.log(store.getState());
+// console.log(store.getState());
 
 ReactDOM.render(
   <Router>

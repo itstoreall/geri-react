@@ -1,38 +1,30 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const initialState = {
-  counter: {
-    value: 10,
-    step: 5,
-  },
-};
-
-const reducer = (state = initialState, { type, payload }) => {
+const valueReducer = (state = 10, { type, payload }) => {
   switch (type) {
     case 'counter/Increment':
-      return {
-        ...state,
-        counter: {
-          ...state.counter,
-          value: state.counter.value + payload,
-        },
-      };
+      return state + payload;
 
     case 'counter/Decrement':
-      return {
-        ...state,
-        counter: {
-          ...state.counter,
-          value: state.counter.value - payload,
-        },
-      };
+      return state - payload;
 
     default:
       return state;
   }
 };
 
-const store = createStore(reducer, composeWithDevTools());
+const stepReducer = (state = 5, action) => state;
+
+const counterRedicer = combineReducers({
+  value: valueReducer,
+  step: stepReducer,
+});
+
+const rootReducer = combineReducers({
+  counter: counterRedicer,
+});
+
+const store = createStore(rootReducer, composeWithDevTools());
 
 export default store;
