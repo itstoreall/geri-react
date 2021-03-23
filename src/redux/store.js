@@ -1,11 +1,13 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import counterRedicer from './counter/counter-reducer';
+import counterRepetaRedicer from './counterRepeta/counter-reducer';
 import todosReducer from './todos/todos-reducer';
+import counterGeriReducer from './counterGeri/reducer';
 
 const rootReducer = combineReducers({
-  counter: counterRedicer,
+  counterRepeta: counterRepetaRedicer,
   todos: todosReducer,
+  counterGeri: counterGeriReducer,
 });
 
 const store = createStore(rootReducer, composeWithDevTools());
