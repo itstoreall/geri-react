@@ -19,7 +19,7 @@ const TodosReduxPage = () => {
   const [currentTodo, setCurrentTodo] = useState('');
 
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todosGeri);
+  const todos = useSelector((state) => state.todosGeri.items);
 
   // Записывае в стейт готовую тудушку
   const handleSubmit = (todo) => {

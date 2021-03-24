@@ -21,11 +21,11 @@ const CounterGeri = ({ value, step, increment, decrement, setStep }) => {
         <option value='10'>10</option>
         <option value='50'>50</option>
       </select>
-      <button className={s.counterBtn} onClick={decrement}>
+      <button className={s.counterBtn} onClick={() => decrement(step)}>
         -
       </button>
       <span>{value}</span>
-      <button className={s.counterBtn} onClick={increment}>
+      <button className={s.counterBtn} onClick={() => increment(step)}>
         +
       </button>
     </div>

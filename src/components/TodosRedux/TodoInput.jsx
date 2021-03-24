@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { createUseStyles } from "react-jss";
-import { Button, TextField } from "@material-ui/core";
+import React, { useState } from 'react';
+import { createUseStyles } from 'react-jss';
+import { Button, TextField } from '@material-ui/core';
 
 // JSS
 const useStyles = createUseStyles({
   formWrap: {
-    display: "flex",
-    flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'column',
   },
   form: {
-    display: "flex",
-    flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'column',
   },
   checkboxWrap: {
     paddingTop: 20,
@@ -22,24 +22,20 @@ const useStyles = createUseStyles({
     },
   },
   buttonsWrap: {
-    display: "flex",
-    justifyContent: "space-between",
+    display: 'flex',
+    justifyContent: 'space-between',
     padding: 20,
   },
 });
 
 const TodoInput = ({ onSubmit }) => {
   const [showForm, setShowForm] = useState(false);
-  const [value, setValue] = useState("");
-  const [urgency, setUrgency] = useState("low");
+  const [value, setValue] = useState('');
+  const [urgency, setUrgency] = useState('low');
   const s = useStyles();
 
   // Скрывает или показывает форму
-  const toggleForm = () => {
-    setShowForm((prevValue) => !prevValue);
-    setValue("");
-    setUrgency("low");
-  };
+  const toggleForm = () => setShowForm((prevValue) => !prevValue);
 
   // Записываем значение инпута в стейт
   const handleInputChange = (e) => setValue(e.target.value);
@@ -66,8 +62,8 @@ const TodoInput = ({ onSubmit }) => {
     onSubmit(newTodo);
 
     // Reset
-    setValue("");
-    setUrgency("low");
+    setValue('');
+    setUrgency('low');
     setShowForm(false);
   };
 
@@ -77,7 +73,7 @@ const TodoInput = ({ onSubmit }) => {
         <form className={s.form} onSubmit={handleSubmit}>
           <TextField
             // className={input}
-            label="Enter todo"
+            label='Enter todo'
             value={value}
             onChange={handleInputChange}
           />
@@ -87,9 +83,9 @@ const TodoInput = ({ onSubmit }) => {
             <label>
               <input
                 className={s.checkbox}
-                type="radio"
-                value="low"
-                checked={urgency === "low"}
+                type='radio'
+                value='low'
+                checked={urgency === 'low'}
                 onChange={handleUrgencyChange}
               />
               <span>Low</span>
@@ -98,9 +94,9 @@ const TodoInput = ({ onSubmit }) => {
             <label>
               <input
                 className={s.checkbox}
-                type="radio"
-                value="medium"
-                checked={urgency === "medium"}
+                type='radio'
+                value='medium'
+                checked={urgency === 'medium'}
                 onChange={handleUrgencyChange}
               />
               <span>Medium</span>
@@ -109,25 +105,25 @@ const TodoInput = ({ onSubmit }) => {
             <label>
               <input
                 className={s.checkbox}
-                type="radio"
-                value="high"
-                checked={urgency === "high"}
+                type='radio'
+                value='high'
+                checked={urgency === 'high'}
                 onChange={handleUrgencyChange}
               />
               <span>High</span>
             </label>
           </div>
           <div className={s.buttonsWrap}>
-            <Button color="primary" onClick={toggleForm}>
+            <Button color='primary' onClick={toggleForm}>
               Cancel
             </Button>
-            <Button variant="contained" color="primary" type="submit">
+            <Button variant='contained' color='primary' type='submit'>
               Add todo
             </Button>
           </div>
         </form>
       ) : (
-        <Button variant="contained" color="primary" onClick={toggleForm}>
+        <Button variant='contained' color='primary' onClick={toggleForm}>
           + Add todo
         </Button>
       )}
