@@ -18,6 +18,9 @@ const UserDetailsPage = lazy(() =>
 const TodosPage = lazy(() =>
   import('../pages/TodosPage' /* webpackChunkName: "Todos" */)
 );
+const TodosReduxPage = lazy(() =>
+  import('../pages/TodosReduxPage' /* webpackChunkName: "TodosRedux" */)
+);
 const TodoListPage = lazy(() =>
   import('../pages/TodoListPage' /* webpackChunkName: "TodoList" */)
 );
@@ -104,6 +107,13 @@ export const routes = [
     path: '/todos',
     label: 'Todos .s',
     component: TodosPage,
+    exact: false,
+    showInMenu: true,
+  },
+  {
+    path: '/todos-redux',
+    label: 'Todos Redux',
+    component: TodosReduxPage,
     exact: false,
     showInMenu: true,
   },
