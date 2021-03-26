@@ -3,6 +3,9 @@ import { lazy } from 'react';
 const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "home" */)
 );
+const PhonebookReduxPage = lazy(() =>
+  import('../pages/PhonebookReduxPage' /* webpackChunkName: "PhonebookRedux" */)
+);
 const CounterRepetaPage = lazy(() =>
   import('../pages/CounterRepetaPage' /* webpackChunkName: "CounterRepeta" */)
 );
@@ -76,6 +79,12 @@ export const routes = [
     label: 'Home',
     component: HomePage,
     exact: true,
+    showInMenu: true,
+  },
+  {
+    path: '/phonebook-redux',
+    label: 'Phonebook Redux',
+    component: PhonebookReduxPage,
     showInMenu: true,
   },
   {
