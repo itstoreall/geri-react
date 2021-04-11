@@ -12,6 +12,9 @@ const CounterRepetaPage = lazy(() =>
 const CounterGeriPage = lazy(() =>
   import('../pages/CounterGeriPage' /* webpackChunkName: "CounterGeri" */)
 );
+const ClockPage = lazy(() =>
+  import('../pages/ClockPage' /* webpackChunkName: "Clock" */)
+);
 const UsersPage = lazy(() =>
   import('../pages/UsersPage' /* webpackChunkName: "Users" */)
 );
@@ -97,6 +100,12 @@ export const routes = [
     path: '/counter-geri',
     label: 'Counter (Geri)',
     component: CounterGeriPage,
+    showInMenu: true,
+  },
+  {
+    path: '/clock',
+    label: 'Clock',
+    component: ClockPage,
     showInMenu: true,
   },
   {
